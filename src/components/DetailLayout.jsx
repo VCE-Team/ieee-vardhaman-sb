@@ -261,7 +261,7 @@ export default function DetailLayout({ data = {} }) {
                         <img
                           src={member.photo || `https://via.placeholder.com/120?text=${member.name?.charAt(0)}`}
                           alt={member.name}
-                          className="w-full h-full object-cover"
+                          className="w-full h-80 object-cover"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-500"></div>
                       </div>

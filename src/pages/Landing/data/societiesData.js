@@ -148,9 +148,12 @@ export const societiesData = [
     mission: "To promote the development and application of microwave technology.",
     objectives: 'Objectives will be updated soon.',
     slate: [
-      { role: 'Chair', name: 'Dr. Emily Carter', photo: 'https://randomuser.me/api/portraits/women/22.jpg' },
-      { role: 'Vice Chair', name: 'Dr. Michael Brown', photo: 'https://randomuser.me/api/portraits/men/23.jpg' },
-      { role: 'Advisor', name: 'Dr. Suresh Gupta', photo: 'https://randomuser.me/api/portraits/men/24.jpg' }
+      { role: 'Faculty Advisor', name: 'Dr. Sulakshana Chilukuri', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753351223/sulakshana_xmkbb9.jpg' },
+      { role: 'Chair', name: 'Ms. Bhavani Vantakala', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753351223/bhavani_mtts_gztcvg.jpg' },
+      { role: 'Vice Chair', name: 'Ms. G. Nitya Sri', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753351223/nithya_mtts_vcozmh.jpg' },
+      { role: 'Secretary', name: 'Ms. B Shivani', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753351223/shivani_mtts_s7qav3.jpg' },
+      { role: 'Treasurer', name: 'Ms. Thanmai Gadagamma', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753345965/thanmai2_g5za1q.jpg' },
+      { role: 'Web Master', name: 'Mr. K. Suraj', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753351223/suraj_mtts_e851gk.jpg' },
     ],
     achievements: [
       { title: 'Microwave Innovation Award', year: 2022, description: 'For innovation in microwave technology.', image: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg' }
