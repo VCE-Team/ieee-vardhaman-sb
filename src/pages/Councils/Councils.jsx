@@ -26,11 +26,11 @@ export default function Councils() {
             >
               <SpotlightCard
                 id={`council-${council.name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9\-]/g, '')}`}
-                className="cursor-pointer text-left w-full min-h-[200px] h-[200px] min-w-0 focus:outline-none border border-gray-300 hover:bg-gray-50 transition-colors duration-200"
+                className="cursor-pointer text-left w-full min-h-[240px] h-[240px] min-w-0 focus:outline-none border border-gray-300 hover:bg-gray-50 transition-colors duration-200"
                 spotlightColor="rgba(0, 200, 255, 0.2)"
               >
                 <div className="flex justify-center mb-4">
-                  <img src={council.image} alt={council.name + ' logo'} className="h-16 w-16 object-contain rounded-lg" />
+                  <img src={council.image} alt={council.name + ' logo'} className="h-24 w-24 object-contain rounded-lg" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-200 text-center">
                   {council.name}

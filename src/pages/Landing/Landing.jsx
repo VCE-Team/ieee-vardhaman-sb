@@ -113,7 +113,11 @@ function App() {
       <Header navigationItems={navigationItems} activeSection={activeSection} />
       <HeroSection heroImages={heroImages} onScrollToSection={scrollToSection} />
       <VisionMission />
-      <Stats />
+      <Stats 
+        members={societiesData.reduce((sum, s) => sum + (s.stats?.members || 0), 0)}
+        events={societiesData.reduce((sum, s) => sum + (s.stats?.events || 0), 0)}
+        awards={societiesData.reduce((sum, s) => sum + (s.stats?.awards || 0), 0)}
+      />
       <SocietiesSection societies={societiesData} />
       <CouncilsSection councils={councilsData} />
       <EventsSection pastEvents={pastEvents} upcomingEvents={upcomingEvents} />

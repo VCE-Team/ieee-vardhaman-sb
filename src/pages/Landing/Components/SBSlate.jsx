@@ -4,6 +4,15 @@ import { Linkedin, Mail } from 'lucide-react';
 const SBSlate = () => {
     const teamMembers = [
         {
+            id: 10,
+            name: "Nikhil",
+            position: "Advisor",
+            image: "https://res.cloudinary.com/doyh3fqr5/image/upload/v1752436850/e9c51a0a6819c3b0032b44c46fd199b0_b7xpy6.jpg",
+            email: "advisor@ieee-vardhaman.org",
+            linkedin: "https://linkedin.com/in/emilydavis",
+            description: "Providing guidance and mentorship to student leaders and initiatives."
+        },
+        {
             id: 1,
             name: "M. Uday Kiran",
             position: "Chair",
@@ -16,29 +25,48 @@ const SBSlate = () => {
             id: 2,
             name: "Thanmai",
             position: "Vice Chair",
-            image: "https://res.cloudinary.com/doyh3fqr5/image/upload/v1752436870/f35d121e8d8d8b96b23f9b5b8829e4e0_ompbq7.jpg",
+            image: "https://res.cloudinary.com/dmdiia2yv/image/upload/v1753345965/thanmai2_g5za1q.jpg",
             email: "vicechair@ieee-vardhaman.org",
             linkedin: "https://linkedin.com/in/sarahjohnson",
             description: "Supporting leadership and driving technical excellence across all programs."
         },
         {
             id: 3,
-            name: "Siddharth",
+            name: "Rohith",
+            position: "Secratary",
+            image: "",
+            email: "vicechair@ieee-vardhaman.org",
+            linkedin: "https://linkedin.com/in/sarahjohnson",
+            description: "Supporting leadership and driving technical excellence across all programs."
+        },
+        {
+            id: 4,
+            name: "Aditya",
             position: "Treasurer",
-            image: "https://res.cloudinary.com/doyh3fqr5/image/upload/v1752436751/siddartha-646x681_ssiqdg.jpg",
+            image: "",
             email: "treasurer@ieee-vardhaman.org",
             linkedin: "https://linkedin.com/in/michaelchen",
             description: "Managing financial resources and ensuring sustainable growth."
         },
         {
-            id: 4,
-            name: "Nikhil",
-            position: "Advisor",
-            image: "https://res.cloudinary.com/doyh3fqr5/image/upload/v1752436850/e9c51a0a6819c3b0032b44c46fd199b0_b7xpy6.jpg",
-            email: "advisor@ieee-vardhaman.org",
-            linkedin: "https://linkedin.com/in/emilydavis",
-            description: "Providing guidance and mentorship to student leaders and initiatives."
-        }
+            id: 5,
+            name: "Anil",
+            position: "Webmaster",
+            image: "",
+            email: "technicalhead@ieee-vardhaman.org",
+            linkedin: "https://linkedin.com/in/michaelchen",
+            description: "Managing technical resources and ensuring sustainable growth."
+        },
+        {
+            id: 6,
+            name: "Yasaswini",
+            position: "Webmaster",
+            image: "",
+            email: "technicalhead@ieee-vardhaman.org",
+            linkedin: "https://linkedin.com/in/michaelchen",
+            description: "Managing technical resources and ensuring sustainable growth."
+        },
+
     ];
 
     const getPositionColor = (position) => {

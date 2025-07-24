@@ -2,14 +2,15 @@ export const societiesData = [
   {
     id: 'hkn-society',
     name: 'HKN Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/1995/1995507.png', // Placeholder icon
+    image: 'https://hkn.ieee.org/wp-content/uploads/2017/07/HKN_Logo.jpg', // Placeholder icon
     carouselImages: [
       'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg',
       'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg'
     ],
     description: 'The HKN Society is dedicated to recognizing excellence in the IEEE fields of interest.',
-    vision: 'To foster a culture of academic and professional excellence.',
-    mission: 'To recognize and honor students and professionals who have demonstrated exceptional academic and professional accomplishments.',
+    vision: 'To be a pioneering IEEE-HKN chapter that exemplifies leadership in engineering education by promoting academic excellence, ethical conduct, and purposeful innovation also uphold the spirit of responsible engineering practice in alignment with the institutional vision of advancing societal well-being through technology.',
+    mission: '1. To recognize and celebrate academic merit, professional promise, and leadership potential among engineering students and inspire them to contribute to a sustainable and technologically enriched future.<br/>2. To create a collaborative environment for student-led technical exploration, interdisciplinary innovation, and ethical engineering practices through events, mentorship, and outreach.<br/>3. To align chapter initiatives with Vardhaman College of Engineering’s commitment to excellence in education, research, and service by cultivating industry-ready professionals with strong human values.',
+    objectives: '1.	To recognize and honor academic excellence, leadership potential, and exemplary character among students in the fields of electrical, electronics, and computer engineering. <br/> 2.	To promote a culture of innovation, research, and ethical engineering practices through technical events, mentorship programs, and interdisciplinary collaboration. <br/> 3.	To engage students in service-oriented engineering solutions that address real-world societal needs, aligning with sustainable development goals and community impact. <br/> 4.	To cultivate global competence, professional development, and lifelong learning by facilitating interactions with industry leaders, alumni, and international HKN chapters.' ,
     slate: [
       { role: 'Chair', name: 'Dr. Jane Doe', photo: 'https://randomuser.me/api/portraits/women/40.jpg' },
       { role: 'Vice Chair', name: 'Dr. John Smith', photo: 'https://randomuser.me/api/portraits/men/41.jpg' },
@@ -29,12 +30,13 @@ export const societiesData = [
       upcoming: [
         { title: 'Professional Development Workshop', date: '2024-09-20', description: 'Workshop for professional skills.', image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg' }
       ]
-    }
+    },
+    stats: { members: 120, events: 8, awards: 2 }
   },
   {
     id: 'ieee-circuits-and-systems-society',
     name: 'IEEE Circuits and Systems Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/2721/2721297.png',
+    image: 'https://www.ieee.org/sites/default/files/styles/16_9_637x359/public/dam/zpwysb2oyk/ieee-circuits-and-systems-society-cas.jpg.jpeg?itok=InYIId57',
     carouselImages: [
       'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg',
       'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg'
@@ -42,6 +44,7 @@ export const societiesData = [
     description: "The IEEE Circuits and Systems Society advances the theory, analysis, design, practical implementation, and application of circuits, and the application of circuit theoretic techniques to systems and signal processing.",
     vision: "To be the leading global community for circuits and systems professionals.",
     mission: "To promote the advancement of circuits and systems theory, design, and implementation.",
+    objectives: 'Objectives will be updated soon.',
     slate: [
       { role: 'Chair', name: 'Dr. Linda Park', photo: 'https://randomuser.me/api/portraits/women/13.jpg' },
       { role: 'Vice Chair', name: 'Dr. Mark Evans', photo: 'https://randomuser.me/api/portraits/men/14.jpg' },
@@ -61,12 +64,13 @@ export const societiesData = [
       upcoming: [
         { title: 'Analog Design Workshop', date: '2024-08-12', description: 'Workshop on analog circuit design.', image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg' }
       ]
-    }
+    },
+    stats: { members: 150, events: 10, awards: 3 }
   },
   {
     id: 'ieee-signal-processing-society',
     name: 'IEEE Signal Processing Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/2921/2921222.png',
+    image: 'https://signalprocessingsociety.org/sites/default/files/uploads/images/logos/New_SPS_Logos/Color/RGB/SPS_Logo_Color_RGB.jpg',
     carouselImages: [
       'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg',
       'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg'
@@ -74,6 +78,7 @@ export const societiesData = [
     description: "The IEEE Signal Processing Society is the world's premier professional society for signal processing scientists and professionals.",
     vision: "To advance and disseminate knowledge and technology in signal processing.",
     mission: "To promote the theory and application of signal processing and its allied fields.",
+    objectives: 'Objectives will be updated soon.',
     slate: [
       { role: 'Chair', name: 'Dr. Maria Gomez', photo: 'https://randomuser.me/api/portraits/women/16.jpg' },
       { role: 'Vice Chair', name: 'Dr. Alex Chen', photo: 'https://randomuser.me/api/portraits/men/17.jpg' },
@@ -93,12 +98,13 @@ export const societiesData = [
       upcoming: [
         { title: 'Audio Signal Bootcamp', date: '2024-07-18', description: 'Bootcamp on audio signal processing.', image: 'https://images.pexels.com/photos/1181672/pexels-photo-1181672.jpeg' }
       ]
-    }
+    },
+    stats: { members: 180, events: 12, awards: 4 }
   },
   {
     id: 'ieee-communication-society',
     name: 'IEEE Communication Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/3062/3062634.png',
+    image: 'https://brand-experience.ieee.org/wp-content/uploads/2020/07/ieee-comsoc-1.png',
     carouselImages: [
       'https://images.pexels.com/photos/1181672/pexels-photo-1181672.jpeg',
       'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg'
@@ -106,6 +112,7 @@ export const societiesData = [
     description: "The IEEE Communication Society is dedicated to the advancement of science, technology, and applications in communications and related disciplines.",
     vision: "To be the leading global community for communications professionals.",
     mission: "To promote the development and application of communication and networking technologies.",
+    objectives: 'Objectives will be updated soon.',
     slate: [
       { role: 'Chair', name: 'Dr. Ayesha Khan', photo: 'https://randomuser.me/api/portraits/women/19.jpg' },
       { role: 'Vice Chair', name: 'Dr. John Lee', photo: 'https://randomuser.me/api/portraits/men/20.jpg' },
@@ -125,12 +132,13 @@ export const societiesData = [
       upcoming: [
         { title: 'IoT Conference', date: '2024-11-22', description: 'Conference on Internet of Things.', image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg' }
       ]
-    }
+    },
+    stats: { members: 200, events: 15, awards: 5 }
   },
   {
     id: 'ieee-microwave-theory-and-technology-society',
     name: 'IEEE Microwave Theory and Technology Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/1046/1046857.png',
+    image: 'https://resourcecenter.mtt.ieee.org/sites/default/files/files/mtt-logo.png',
     carouselImages: [
       'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg',
       'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg'
@@ -138,6 +146,7 @@ export const societiesData = [
     description: "The IEEE Microwave Theory and Technology Society advances the theory and application of microwave and millimeter-wave technology.",
     vision: "To be the global leader in microwave theory and technology.",
     mission: "To promote the development and application of microwave technology.",
+    objectives: 'Objectives will be updated soon.',
     slate: [
       { role: 'Chair', name: 'Dr. Emily Carter', photo: 'https://randomuser.me/api/portraits/women/22.jpg' },
       { role: 'Vice Chair', name: 'Dr. Michael Brown', photo: 'https://randomuser.me/api/portraits/men/23.jpg' },
@@ -157,12 +166,13 @@ export const societiesData = [
       upcoming: [
         { title: 'RF Workshop', date: '2024-10-10', description: 'Workshop on RF and microwave systems.', image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg' }
       ]
-    }
+    },
+    stats: { members: 100, events: 10, awards: 3 }
   },
   {
     id: 'ieee-antennas-and-propagation-society',
     name: 'IEEE Antennas and Propagation Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/1995/1995507.png',
+    image: 'https://ieee-ceda.org/files/ieeeceda/styles/responsive_4_3_760w/public/images/media/photos/aps-logo_0.png?h=dbdb5d86&itok=UMpahFv8',
     carouselImages: [
       'https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg',
       'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg'
@@ -170,6 +180,7 @@ export const societiesData = [
     description: "The IEEE Antennas and Propagation Society is dedicated to the advancement of antenna theory and propagation of electromagnetic waves.",
     vision: "To be the global leader in antennas and propagation research and education.",
     mission: "To promote the development and application of antennas and propagation technologies.",
+    objectives: 'Objectives will be updated soon.',
     slate: [
       { role: 'Chair', name: 'Dr. Olivia White', photo: 'https://randomuser.me/api/portraits/women/25.jpg' },
       { role: 'Vice Chair', name: 'Dr. Ethan Green', photo: 'https://randomuser.me/api/portraits/men/26.jpg' },
@@ -189,12 +200,13 @@ export const societiesData = [
       upcoming: [
         { title: 'Wave Propagation Seminar', date: '2024-12-05', description: 'Seminar on electromagnetic wave propagation.', image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg' }
       ]
-    }
+    },
+    stats: { members: 120, events: 12, awards: 4 }
   },
   {
     id: 'ieee-systems-man-and-cybernetics-society',
     name: 'IEEE Systems, Man, and Cybernetics Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/4712/4712035.png',
+    image: 'https://www.ieeesmc.org/wp-content/uploads/2020/01/SMCS_ID_4-12___17_Mar_202011-scaled.jpg',
     carouselImages: [
       'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg',
       'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg'
@@ -202,6 +214,7 @@ export const societiesData = [
     description: "The IEEE SMC Society advances the theory and practice of systems engineering, human-machine systems, and cybernetics.",
     vision: "To be the leading global community for systems, man, and cybernetics professionals.",
     mission: "To promote the development and application of systems and cybernetics technologies.",
+    objectives: 'Objectives will be updated soon.',
     slate: [
       { role: 'Chair', name: 'Dr. Sophia Turner', photo: 'https://randomuser.me/api/portraits/women/28.jpg' },
       { role: 'Vice Chair', name: 'Dr. Liam Patel', photo: 'https://randomuser.me/api/portraits/men/29.jpg' },
@@ -221,12 +234,13 @@ export const societiesData = [
       upcoming: [
         { title: 'Human-Machine Interaction Seminar', date: '2024-09-18', description: 'Seminar on human-machine systems.', image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg' }
       ]
-    }
+    },
+    stats: { members: 150, events: 15, awards: 5 }
   },
   {
     id: 'ieee-computer-society',
     name: 'IEEE Computer Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/2721/2721297.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBIcthqV0b6PKEn8GV0mX8nw8dpbQOkKOUWg&s',
     carouselImages: [
       'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg',
       'https://images.pexels.com/photos/1181672/pexels-photo-1181672.jpeg'
@@ -234,6 +248,7 @@ export const societiesData = [
     description: "The IEEE Computer Society is the premier source for information, inspiration, and collaboration in computer science and engineering.",
     vision: "To be the leading provider of technical information, community services, and personalized services to the world's computing professionals.",
     mission: "To advance the theory, practice, and application of computer and information processing science and technology.",
+    objectives: 'Objectives will be updated soon.',
     slate: [
       { role: 'Chair', name: 'Alice Johnson', photo: 'https://randomuser.me/api/portraits/women/1.jpg' },
       { role: 'Vice Chair', name: 'Bob Lee', photo: 'https://randomuser.me/api/portraits/men/2.jpg' },
@@ -254,12 +269,13 @@ export const societiesData = [
       upcoming: [
         { title: 'Cloud Computing Bootcamp', date: '2024-09-10', description: 'Hands-on cloud workshop.', image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg' }
       ]
-    }
+    },
+    stats: { members: 200, events: 20, awards: 6 }
   },
   {
     id: 'ieee-engineering-in-medicine-and-biology-society',
     name: 'IEEE Engineering in Medicine and Biology Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/2965/2965380.png',
+    image: 'https://ieeeaiubsb.com/images/logo/EMBS-01.png',
     carouselImages: [
       'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg',
       'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg'
@@ -267,6 +283,7 @@ export const societiesData = [
     description: "The IEEE EMBS advances the development and application of engineering concepts and methods to biology and medicine.",
     vision: "To be the leading global community for biomedical engineering professionals.",
     mission: "To promote the advancement of engineering in medicine and biology.",
+    objectives: 'Objectives will be updated soon.',
     slate: [
       { role: 'Chair', name: 'Dr. Hannah Kim', photo: 'https://randomuser.me/api/portraits/women/31.jpg' },
       { role: 'Vice Chair', name: 'Dr. Daniel Lee', photo: 'https://randomuser.me/api/portraits/men/32.jpg' },
@@ -286,12 +303,13 @@ export const societiesData = [
       upcoming: [
         { title: 'Bioengineering Symposium', date: '2024-12-10', description: 'Symposium on bioengineering.', image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg' }
       ]
-    }
+    },
+    stats: { members: 180, events: 18, awards: 7 }
   },
   {
     id: 'ieee-information-theory-society',
     name: 'IEEE Information Theory Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/2921/2921222.png',
+    image: 'https://www.ieee.org/sites/default/files/styles/16_9_637x359/public/dam/2vmognqiro/ieee-information-theory-society-its.jpg.jpeg?itok=eJxujoJk',
     carouselImages: [
       'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg',
       'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg'
@@ -299,6 +317,7 @@ export const societiesData = [
     description: "The IEEE Information Theory Society is dedicated to the advancement of the mathematical underpinnings of information technology.",
     vision: "To be the leading global community for information theory professionals.",
     mission: "To promote the development and application of information theory.",
+    objectives: 'Objectives will be updated soon.',
     slate: [
       { role: 'Chair', name: 'Dr. Isabella Rossi', photo: 'https://randomuser.me/api/portraits/women/34.jpg' },
       { role: 'Vice Chair', name: 'Dr. Lucas Wang', photo: 'https://randomuser.me/api/portraits/men/35.jpg' },
@@ -318,12 +337,13 @@ export const societiesData = [
       upcoming: [
         { title: 'Entropy Seminar', date: '2024-10-30', description: 'Seminar on entropy and information.', image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg' }
       ]
-    }
+    },
+    stats: { members: 100, events: 10, awards: 3 }
   },
   {
     id: 'ieee-computational-intelligence-society',
     name: 'IEEE Computational Intelligence Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/4712/4712035.png',
+    image: 'https://cis.ieee.org/images/files/Branding/logos/color/IEEE_CIS_logo_RGB_72ppi.jpg',
     carouselImages: [
       'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg',
       'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg'
@@ -331,6 +351,7 @@ export const societiesData = [
     description: "The IEEE Computational Intelligence Society advances the theory, design, application, and development of biologically and linguistically motivated computational paradigms.",
     vision: "To be the global leader in computational intelligence research and application.",
     mission: "To promote the development and application of computational intelligence technologies.",
+    objectives: 'Objectives will be updated soon.',
     slate: [
       { role: 'Chair', name: 'Dr. Julia Müller', photo: 'https://randomuser.me/api/portraits/women/37.jpg' },
       { role: 'Vice Chair', name: 'Dr. Ahmed Hassan', photo: 'https://randomuser.me/api/portraits/men/38.jpg' },
@@ -350,76 +371,13 @@ export const societiesData = [
       upcoming: [
         { title: 'Fuzzy Systems Bootcamp', date: '2024-09-10', description: 'Bootcamp on fuzzy systems.', image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg' }
       ]
-    }
-  },
-  {
-    id: 'ieee-sensors-council',
-    name: 'IEEE Sensors Council',
-    image: 'https://cdn-icons-png.flaticon.com/512/3135/3135755.png',
-    carouselImages: [
-      'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg',
-      'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg'
-    ],
-    description: "The IEEE Sensors Council promotes the theory, design, fabrication, manufacturing, and application of sensors.",
-    vision: "To be the leading global community for sensor technology professionals.",
-    mission: "To advance the science and application of sensors.",
-    slate: [
-      { role: 'Chair', name: 'Dr. Elena Petrova', photo: 'https://randomuser.me/api/portraits/women/40.jpg' },
-      { role: 'Vice Chair', name: 'Dr. Tomás Silva', photo: 'https://randomuser.me/api/portraits/men/41.jpg' },
-      { role: 'Advisor', name: 'Dr. Yuki Tanaka', photo: 'https://randomuser.me/api/portraits/women/42.jpg' }
-    ],
-    achievements: [
-      { title: 'Sensor Innovation Award', year: 2022, description: 'For innovation in sensor technology.', image: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg' }
-    ],
-    gallery: [
-      { img: 'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg', caption: 'Sensor Expo' },
-      { img: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg', caption: 'Workshop' }
-    ],
-    events: {
-      past: [
-        { title: 'Sensor Symposium', date: '2023-05-22', description: 'Symposium on sensor technology.', image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg' }
-      ],
-      upcoming: [
-        { title: 'Smart Sensors Conference', date: '2024-10-18', description: 'Conference on smart sensors.', image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg' }
-      ]
-    }
-  },
-  {
-    id: 'ieee-biometrics-council',
-    name: 'IEEE Biometrics Council',
-    image: 'https://cdn-icons-png.flaticon.com/512/2965/2965380.png',
-    carouselImages: [
-      'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg',
-      'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg'
-    ],
-    description: "The IEEE Biometrics Council advances the theory, design, and application of biometrics in security and identification.",
-    vision: "To be the global leader in biometrics research and application.",
-    mission: "To promote the development and application of biometric technologies.",
-    slate: [
-      { role: 'Chair', name: 'Dr. Marta Rossi', photo: 'https://randomuser.me/api/portraits/women/43.jpg' },
-      { role: 'Vice Chair', name: 'Dr. Samuel Lee', photo: 'https://randomuser.me/api/portraits/men/44.jpg' },
-      { role: 'Advisor', name: 'Dr. Aisha Rahman', photo: 'https://randomuser.me/api/portraits/women/45.jpg' }
-    ],
-    achievements: [
-      { title: 'Biometrics Research Award', year: 2023, description: 'For outstanding research in biometrics.', image: 'https://images.pexels.com/photos/106368/pexels-photo-106368.jpeg' }
-    ],
-    gallery: [
-      { img: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg', caption: 'Biometrics Expo' },
-      { img: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg', caption: 'Security Workshop' }
-    ],
-    events: {
-      past: [
-        { title: 'Biometrics Conference', date: '2023-11-10', description: 'Conference on biometrics.', image: 'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg' }
-      ],
-      upcoming: [
-        { title: 'Identity Management Seminar', date: '2024-12-15', description: 'Seminar on identity management.', image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg' }
-      ]
-    }
+    },
+    stats: { members: 150, events: 15, awards: 6 }
   },
   {
     id: 'ieee-photonics-society',
     name: 'IEEE Photonics Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/905/905690.png',
+    image: 'https://ieeephotonics.org/wp-content/uploads/2022/11/photonics-society-alt.jpeg',
     carouselImages: [
       'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg',
       'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg'
@@ -427,6 +385,7 @@ export const societiesData = [
     description: "The IEEE Photonics Society is dedicated to the advancement of photonics and optoelectronics.",
     vision: "To be the global leader in photonics research and application.",
     mission: "To promote the development and application of photonics technologies.",
+    objectives: 'Objectives will be updated soon.',
     slate: [
       { role: 'Chair', name: 'Dr. Laura Kim', photo: 'https://randomuser.me/api/portraits/women/46.jpg' },
       { role: 'Vice Chair', name: 'Dr. Peter Novak', photo: 'https://randomuser.me/api/portraits/men/47.jpg' },
@@ -446,12 +405,13 @@ export const societiesData = [
       upcoming: [
         { title: 'Optoelectronics Conference', date: '2024-11-25', description: 'Conference on optoelectronics.', image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg' }
       ]
-    }
+    },
+    stats: { members: 120, events: 12, awards: 4 }
   },
   {
     id: 'ieee-industrial-electronics-society',
     name: 'IEEE Industrial Electronics Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/1046/1046857.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHPh3hehgZfTYpPtU8M4rwUx7tQQNRSQsDoA&s',
     carouselImages: [
       'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg',
       'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg'
@@ -459,6 +419,7 @@ export const societiesData = [
     description: "The IEEE Industrial Electronics Society advances the theory and application of electronics in industry.",
     vision: "To be the leading global community for industrial electronics professionals.",
     mission: "To promote the development and application of industrial electronics.",
+    objectives: 'Objectives will be updated soon.',
     slate: [
       { role: 'Chair', name: 'Dr. Grace Lee', photo: 'https://randomuser.me/api/portraits/women/49.jpg' },
       { role: 'Vice Chair', name: 'Dr. Oscar Martinez', photo: 'https://randomuser.me/api/portraits/men/50.jpg' },
@@ -478,12 +439,13 @@ export const societiesData = [
       upcoming: [
         { title: 'Smart Manufacturing Seminar', date: '2024-11-12', description: 'Seminar on smart manufacturing.', image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg' }
       ]
-    }
+    },
+    stats: { members: 180, events: 18, awards: 7 }
   },
   {
     id: 'ieee-power-electronics-society',
     name: 'IEEE Power Electronics Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/1046/1046857.png',
+    image: 'https://ieeesystemscouncil.org/files/ieeesyscouncil/styles/responsive_4_3_760w/public/images/media/photos/PELS%20logo.png?h=55bbb273&itok=_LDv2Ng2',
     carouselImages: [
       'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg',
       'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg'
@@ -491,6 +453,7 @@ export const societiesData = [
     description: "The IEEE Power Electronics Society is dedicated to the advancement of the theory and application of power electronics.",
     vision: "To be the global leader in power electronics research and application.",
     mission: "To promote the development and application of power electronics technologies.",
+    objectives: 'Objectives will be updated soon.',
     slate: [
       { role: 'Chair', name: 'Dr. Lucas Silva', photo: 'https://randomuser.me/api/portraits/men/52.jpg' },
       { role: 'Vice Chair', name: 'Dr. Emily Brown', photo: 'https://randomuser.me/api/portraits/women/53.jpg' },
@@ -510,32 +473,25 @@ export const societiesData = [
       upcoming: [
         { title: 'Energy Conversion Conference', date: '2024-10-28', description: 'Conference on energy conversion.', image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg' }
       ]
-    }
+    },
+    stats: { members: 150, events: 15, awards: 6 }
   },
   {
     id: 'ieee-geoscience-and-remote-sensing-society',
     name: 'IEEE Geoscience and Remote Sensing Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/1995/1995507.png',
+    image: 'https://resourcecenter.grss.ieee.org/sites/default/files/files/grss-logo.gif',
     vision: '',
     mission: '',
+    objectives: 'Objectives will be updated soon.',
     slate: [],
     achievements: [],
-    events: { past: [], upcoming: [] }
-  },
-  {
-    id: 'ieee-robotics-and-automation-society',
-    name: 'IEEE Robotics and Automation Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/4712/4712035.png',
-    vision: '',
-    mission: '',
-    slate: [],
-    achievements: [],
-    events: { past: [], upcoming: [] }
+    events: { past: [], upcoming: [] },
+    stats: { members: 100, events: 10, awards: 3 }
   },
   {
     id: 'ieee-robotics-society',
     name: 'IEEE Robotics Society',
-    image: 'https://cdn-icons-png.flaticon.com/512/4712/4712035.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgjPlqAX9WSzWGsmUIZGMYHb80FEguitHbIA&s',
     carouselImages: [
       'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg',
       'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg'
@@ -543,6 +499,7 @@ export const societiesData = [
     description: "The IEEE Robotics Society inspires innovation in robotics and automation, connecting students and professionals worldwide.",
     vision: "To lead the advancement of robotics and automation for the benefit of humanity.",
     mission: "To foster the development and application of robotics and automation technology.",
+    objectives: 'Objectives will be updated soon.',
     slate: [
       { role: 'Chair', name: 'Carlos Martinez', photo: 'https://randomuser.me/api/portraits/men/4.jpg' },
       { role: 'Vice Chair', name: 'Priya Singh', photo: 'https://randomuser.me/api/portraits/women/5.jpg' },
@@ -562,6 +519,7 @@ export const societiesData = [
       upcoming: [
         { title: 'Automation Summit', date: '2024-11-15', description: 'Summit on automation technologies.', image: 'https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg' }
       ]
-    }
+    },
+    stats: { members: 100, events: 10, awards: 3 }
   }
 ]; 

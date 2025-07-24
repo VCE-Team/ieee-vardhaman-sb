@@ -1,7 +1,7 @@
 import React from 'react';
 import CountUp from '../../../components/reactcom/CountUp';
 
-export function Stats() {
+export function Stats({ members = 0, events = 0, awards = 0 }) {
   return (
     <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -10,7 +10,7 @@ export function Stats() {
             <div className="flex items-center justify-center">
               <CountUp
                 from={0}
-                to={1000}
+                to={members}
                 direction="up"
                 duration={2}
                 className="text-7xl font-bold text-green-700"
@@ -23,7 +23,7 @@ export function Stats() {
             <div className="flex items-center justify-center">
               <CountUp
                 from={0}
-                to={30}
+                to={events}
                 direction="up"
                 duration={2}
                 className="text-7xl font-bold text-green-700"
@@ -36,7 +36,7 @@ export function Stats() {
             <div className="flex items-center justify-center">
               <CountUp
                 from={0}
-                to={10}
+                to={awards}
                 direction="up"
                 duration={2}
                 className="text-7xl font-bold text-green-700"

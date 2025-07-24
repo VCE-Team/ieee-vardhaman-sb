@@ -173,36 +173,43 @@ export default function DetailLayout({ data = {} }) {
           {/* Heading */}
           <div className="mb-12">
             <h2 className="text-4xl font-extrabold text-gray-900 mb-2 text-center">
-              Our Vision & Mission
+              Our Vision, Mission and Objectives
             </h2>
             <div className="w-16 h-1 bg-green-400 mb-1 mx-auto"></div>
             <div className="w-8 h-1 bg-blue-800 mx-auto"></div>
           </div>
 
           {/* Vision & Mission Cards (Landing Page Style) */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {/* Vision Card */}
             <div className="bg-gray-100 bg-opacity-70 py-8 px-6 rounded-xl border border-gray-200 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-[0_5px_10px_rgba(0,0,0,0.05),_-10px_10px_5px_rgba(0,0,0,0.15),_10px_10px_5px_rgba(0,0,0,0.15)] flex flex-col">
               <div className="border-l-4 border-blue-600 rounded-l-xl pl-4 mb-4"></div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
-              <p className="text-gray-700 leading-relaxed flex-grow">
-                {combinedData.vision}
-              </p>
+              <p className="text-gray-700 leading-relaxed flex-grow" dangerouslySetInnerHTML={{ __html: combinedData.vision }} />
             </div>
 
             {/* Mission Card */}
             <div className="bg-gray-100 bg-opacity-70 py-8 px-6 rounded-xl border border-gray-200 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-[0_5px_10px_rgba(0,0,0,0.05),_-10px_10px_5px_rgba(0,0,0,0.15),_10px_10px_5px_rgba(0,0,0,0.15)] flex flex-col">
               <div className="border-l-4 border-purple-600 rounded-l-xl pl-4 mb-4"></div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
-              <p className="text-gray-700 leading-relaxed flex-grow">
-                {combinedData.mission}
-              </p>
+              <p className="text-gray-700 leading-relaxed flex-grow" dangerouslySetInnerHTML={{ __html: combinedData.mission }} />
+            </div>
+
+            {/* Objectives Card */}
+            <div className="bg-gray-100 bg-opacity-70 py-8 px-6 rounded-xl border border-gray-200 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-[0_5px_10px_rgba(0,0,0,0.05),_-10px_10px_5px_rgba(0,0,0,0.15),_10px_10px_5px_rgba(0,0,0,0.15)] flex flex-col">
+              <div className="border-l-4 border-green-600 rounded-l-xl pl-4 mb-4"></div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Objectives</h3>
+              <p className="text-gray-700 leading-relaxed flex-grow" dangerouslySetInnerHTML={{ __html: combinedData.objectives || 'Objectives will be updated soon.' }} />
             </div>
           </div>
         </section>
 
         {/* Numbers/Stats Section */}
-        <Stats />
+        <Stats 
+          members={data.stats?.members || 0}
+          events={data.stats?.events || 0}
+          awards={data.stats?.awards || 0}
+        />
 
         {/* Leadership Team */}
         {combinedData.slate && combinedData.slate.length > 0 && (

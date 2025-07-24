@@ -25,11 +25,11 @@ export default function Societies() {
             >
               <SpotlightCard
                 id={`society-${society.name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9\-]/g, '')}`}
-                className="cursor-pointer w-full h-full min-h-[220px] flex flex-col justify-center items-center focus:outline-none border border-gray-300 hover:bg-gray-50 transition-colors duration-200"
+                className="cursor-pointer w-full h-full min-h-[240px] flex flex-col justify-center items-center focus:outline-none border border-gray-300 hover:bg-gray-50 transition-colors duration-200"
                 spotlightColor="rgba(0, 200, 255, 0.2)"
               >
                 <div className="flex flex-col items-center justify-center h-full w-full">
-                  <img src={society.image} alt={society.name + ' logo'} className="h-16 w-16 object-contain rounded-lg mb-4" />
+                  <img src={society.image} alt={society.name + ' logo'} className="h-24 w-24 object-contain rounded-lg mb-4" />
                   <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 transition-colors duration-200 text-center">
                     {society.name}
                   </h3>

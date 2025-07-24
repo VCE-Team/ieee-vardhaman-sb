@@ -29,21 +29,30 @@ export const CouncilsSection = ({ councils }) => {
               style={{ textDecoration: 'none' }}
             >
               <SpotlightCard 
-                className="cursor-pointer text-left w-full min-h-[200px] h-[200px] focus:outline-none border border-gray-300 hover:bg-gray-50 transition-colors duration-200"
+                className="cursor-pointer text-left w-full min-h-[220px] h-[220px] focus:outline-none border border-gray-300 hover:bg-gray-50 transition-colors duration-200"
                 spotlightColor="rgba(0, 200, 255, 0.2)"
               >
                 <div className="flex justify-center mb-4">
                   {typeof council.image === 'function' ? (
                     React.createElement(council.image, { className: 'h-16 w-16 object-contain rounded-lg text-blue-600' })
                   ) : (
-                    <img src={council.image} alt={council.name + ' logo'} className="h-16 w-16 object-contain rounded-lg" />
+                    <img src={council.image} alt={council.name + ' logo'} className="h-24 w-24 object-contain rounded-lg" />
                   )}
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-200 text-center">
                     {council.name}
                   </h3>
-                  {/* <p className="text-gray-600">{council.description}</p> */}
+                  <p className="text-gray-600 text-sm text-center mb-2 min-h-[40px]">
+                    {council.objectives || 'Objectives will be updated soon.'}
+                  </p>
+                  {/* {council.stats && (
+                    <div className="flex justify-around mt-4 text-xs text-gray-600">
+                      <div><b>{council.stats.members}</b> Members</div>
+                      <div><b>{council.stats.events}</b> Events</div>
+                      <div><b>{council.stats.awards}</b> Awards</div>
+                    </div>
+                  )} */}
                 </div>
               </SpotlightCard>
             </Link>
