@@ -165,9 +165,12 @@ export const councilsData = [
     mission: "To advance the science and application of sensors.",
     objectives: 'Objectives will be updated soon.',
     slate: [
-      { role: 'Chair', name: 'Dr. Elena Petrova', photo: 'https://randomuser.me/api/portraits/women/40.jpg' },
-      { role: 'Vice Chair', name: 'Dr. Tomás Silva', photo: 'https://randomuser.me/api/portraits/men/41.jpg' },
-      { role: 'Advisor', name: 'Dr. Yuki Tanaka', photo: 'https://randomuser.me/api/portraits/women/42.jpg' }
+      { role: 'Advisor', name: 'B.Rupa', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753680179/eff6a5ae-8ee4-4dc3-838b-90d7694e7fda.png' },
+      { role: 'Chair', name: 'M Hitha Reddy', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753680191/606c3c96-be44-42b0-b34b-1cc514dee903.png' },
+      { role: 'Vice Chair', name: 'Nagella Sai Saketh', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753678123/saketh_zwv94w.jpg' },
+      { role: 'Secretary', name: 'Siddamshetty Sai Chandu', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753680291/2a6affdb-6386-45c5-83e6-60056ef483fd.png' },
+      { role: 'Treasurer', name: 'Modugu Meghana', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753680459/038a96c7-2ff7-42e5-9fd4-ebcc66cf3cb1.png' },
+      { role: 'Web Master', name: 'B Pardhiv Reddy', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753680466/6810484f-4720-437e-80e2-9dbb8fe60929.png' }
     ],
     achievements: [
       { title: 'Sensor Innovation Award', year: 2022, description: 'For innovation in sensor technology.', image: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg' }

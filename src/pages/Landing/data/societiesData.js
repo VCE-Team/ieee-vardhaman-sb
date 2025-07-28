@@ -219,9 +219,12 @@ export const societiesData = [
     mission: "To promote the development and application of systems and cybernetics technologies.",
     objectives: 'Objectives will be updated soon.',
     slate: [
-      { role: 'Chair', name: 'Dr. Sophia Turner', photo: 'https://randomuser.me/api/portraits/women/28.jpg' },
-      { role: 'Vice Chair', name: 'Dr. Liam Patel', photo: 'https://randomuser.me/api/portraits/men/29.jpg' },
-      { role: 'Advisor', name: 'Dr. Anjali Rao', photo: 'https://randomuser.me/api/portraits/women/30.jpg' }
+      { role: 'Advisor', name: 'Dr Ramesh Karnati', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753681640/Dr_Ramesh_Karnati_kxciks.jpg' },
+      { role: 'Chair', name: 'Mr Uday Kiran Makineni', photo: 'https://res.cloudinary.com/doyh3fqr5/image/upload/v1742148104/090092b7-19ff-43de-b38c-4d17133ac4b7.png' },
+      { role: 'Vice Chair', name: 'Mr C Charan Sankeerth', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753681640/C_Charan_Sankeerth_24881A05D8_vosfpf.jpg' },
+      { role: 'Secretary ', name: 'Ms Sreeshma Kampe', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753681642/Sreeshma_K_23881A0526_dbhuef.jpg' },
+      { role: 'Treasurer', name: 'Ms Franzonia Maddirala', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753681642/maddirala_s_y_k_g_franzonia_23881A05DM_hi5j42.jpg' },
+      { role: 'Web Master', name: 'Dhanalaxmi Rasamalla ', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753681643/RASAMALLA_DHANALAXMI_23881A05W5_oln9ku.jpg' }
     ],
     achievements: [
       { title: 'Cybernetics Research Award', year: 2022, description: 'For outstanding research in cybernetics.', image: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg' }
@@ -253,9 +256,50 @@ export const societiesData = [
     mission: "To advance the theory, practice, and application of computer and information processing science and technology.",
     objectives: 'Objectives will be updated soon.',
     slate: [
-      { role: 'Chair', name: 'Alice Johnson', photo: 'https://randomuser.me/api/portraits/women/1.jpg' },
-      { role: 'Vice Chair', name: 'Bob Lee', photo: 'https://randomuser.me/api/portraits/men/2.jpg' },
-      { role: 'Advisor', name: 'Dr. Emily Watson', photo: 'https://randomuser.me/api/portraits/women/3.jpg' }
+      { role: 'Advisor', name: 'G S Prasada Reddy', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753681126/gsprasadareddy_xgf6qh.jpg' },
+      { role: 'Chair', name: 'Mr Arjun Boorla', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753681126/23881A05L2_arjun_b_ljvio2.jpg' },
+      { role: 'Vice Chair', name: 'Ms Akshaya Allam', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753681126/allam_akshaya_24881A05D2_a7lypt.jpg' },
+      { role: 'Secretary', name: 'Ms Anumita Choubey', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753681126/24881A05K8_anumita_iwossj.jpg' },
+      { role: 'Treasurer', name: 'Ms Charaka Ananya', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753681127/23881A05L3_ananya_ch_r67bqm.jpg' },
+      { role: 'Web Master', name: 'Mr Ajay Lysetti', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753681126/LYSETTI_AJAY_23881A05N0_mgqxuq.jpg' }
+    ],
+    achievements: [
+      { title: 'Best Student Branch Award', year: 2024, description: 'IEEE Region 10 Recognition', image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg' },
+      { title: 'Technical Innovation Prize', year: 2023, description: 'Awarded for outstanding technical project.', image: 'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg' }
+    ],
+    gallery: [
+      { img: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg', caption: 'Annual Meetup' },
+      { img: 'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg', caption: 'Workshop' }
+    ],
+    events: {
+      past: [
+        { title: 'AI Conference', date: '2023-04-12', description: 'A major conference on AI.', image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg' }
+      ],
+      upcoming: [
+        { title: 'Cloud Computing Bootcamp', date: '2024-09-10', description: 'Hands-on cloud workshop.', image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg' }
+      ]
+    },
+    stats: { members: 200, events: 20, awards: 6 }
+  },
+  {
+    id: 'IEEE Education Society',
+    name: 'IEEE Education Society',
+    image: 'https://ieee-edusociety.org/files/ieeeedusociety/ieee-edsoc-color-logo-forweb.png',
+    carouselImages: [
+      'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg',
+      'https://images.pexels.com/photos/1181672/pexels-photo-1181672.jpeg'
+    ],
+    description: "The IEEE Education Society (EdSoc) was founded in 1957 and is one of the oldest technical societies in the IEEE. It is a worldwide community of professionals dedicated to ensuring high-quality education in science and engineering.",
+    vision: "To be a global leader in Engineering Education",
+    mission: "The mission of the IEEE Education Society is to be an international organization that promotes, advances, and disseminates state-of-the-art scientific information and resources related to the Society’s field of interest and provides professional development opportunities for academic and industry professionals.",
+    objectives: 'Objectives will be updated soon.',
+    slate: [
+      { role: 'Advisor', name: 'Dr. Shanthi Makka', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753679429/5817935a-b75d-4ab3-84c5-dd18c5adbfbf.png' },
+      { role: 'Chair', name: 'V. Himavardhan Reddy', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753679455/b22d169b-8402-4a0a-8767-fa43bacb1960.png' },
+      { role: 'Vice Chair', name: 'Ch. Poojitha', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753679466/f1e41d8d-8630-45d2-9eec-6aa20fb49752.png' },
+      { role: 'Secretary ', name: 'Yasaswini Prathipati', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753679595/e09131c9-c10f-4d75-9d50-1cf8d894c4ab.png' },
+      { role: 'Treasurer', name: 'Chippalapally Akhila', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753679647/d6986214-7314-4f14-97eb-4760a25c5da7.png' },
+      { role: 'Web Master', name: 'Lakshmi devi', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753679684/ddb2c636-b683-4371-aa5f-2c4ef2273767.png' }
     ],
     achievements: [
       { title: 'Best Student Branch Award', year: 2024, description: 'IEEE Region 10 Recognition', image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg' },
@@ -396,6 +440,43 @@ export const societiesData = [
     ],
     achievements: [
       { title: 'Photonics Innovation Award', year: 2022, description: 'For innovation in photonics.', image: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg' }
+    ],
+    gallery: [
+      { img: 'https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg', caption: 'Photonics Lab' },
+      { img: 'https://images.pexels.com/photos/1000653/pexels-photo-1000653.jpeg', caption: 'Optics Workshop' }
+    ],
+    events: {
+      past: [
+        { title: 'Photonics Symposium', date: '2023-10-20', description: 'Symposium on photonics.', image: 'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg' }
+      ],
+      upcoming: [
+        { title: 'Optoelectronics Conference', date: '2024-11-25', description: 'Conference on optoelectronics.', image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg' }
+      ]
+    },
+    stats: { members: 120, events: 12, awards: 4 }
+  },
+  {
+    id: 'ieee-women-in-engineering-society',
+    name: 'IEEE Women in Engineering Society',
+    image: 'https://brand-experience.ieee.org/wp-content/uploads/2019/01/WIE_purple_pms526.png',
+    carouselImages: [
+      'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg',
+      'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg'
+    ],
+    description: "The IEEE Women in Engineering Society is dedicated to the empower women in the current generation .",
+    vision: "To be updated.",
+    mission: "To be updated",
+    objectives: 'Objectives will be updated soon.',
+    slate: [
+      { role: 'Advisor', name: ' Dr. Sangeeta Singh', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753678123/Sangeeta_Singh_APSCON_m632ac.png' },
+      { role: 'Chair', name: 'Thanmai Gadagamma', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753345744/thanmai_jsfaza.jpg' },
+      { role: 'Vice Chair', name: 'Sadhwika Gaddam', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753678124/sadhwika_pn9r1y.jpg' },
+      { role: 'Secretary', name: 'Allam Akshaya', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753678123/akshaya_dtqplv.jpg' },
+      { role: 'Treasurer', name: 'Nagella Sai Saketh', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753678123/saketh_zwv94w.jpg' },
+      { role: 'Webmaster', name: 'Mohammad Irdhadulla', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753678123/irshad_p3skbr.jpg' }
+    ],
+    achievements: [
+      { title: 'Women in Engineering Award', year: 2022, description: 'For innovation in photonics.', image: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg' }
     ],
     gallery: [
       { img: 'https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg', caption: 'Photonics Lab' },
