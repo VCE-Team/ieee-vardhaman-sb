@@ -123,6 +123,14 @@ export const councils: Council[] = [
     name: "IEEE Nanotechnology Council", 
     image: "https://cdn-icons-png.flaticon.com/512/2721/2721297.png" // Nano icon
   },
+  { 
+    name: "IEEE Sensors Council", 
+    image: "https://cdn-icons-png.flaticon.com/512/3135/3135755.png" // Sensors icon
+  },
+  { 
+    name: "IEEE Biometrics Council", 
+    image: "https://cdn-icons-png.flaticon.com/512/2965/2965380.png" // Biometrics icon
+  },
 ];
 
 export const pastEvents: PastEvent[] = [

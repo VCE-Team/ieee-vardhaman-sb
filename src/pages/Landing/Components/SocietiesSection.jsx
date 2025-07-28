@@ -43,9 +43,9 @@ export const SocietiesSection = ({ societies }) => {
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-200 text-center">
                   {society.name}
                 </h3>
-                <p className="text-gray-600 text-sm text-center mb-2 min-h-[40px]">
+                {/* <p className="text-gray-600 text-sm text-center mb-2 min-h-[40px]">
                   {society.objectives || 'Objectives will be updated soon.'}
-                </p>
+                </p> */}
                 {/* {society.stats && (
                   <div className="flex justify-around mt-4 text-xs text-gray-600">
                     <div><b>{society.stats.members}</b> Members</div>

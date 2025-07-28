@@ -199,9 +199,12 @@ export const councilsData = [
     mission: "To promote the development and application of biometric technologies.",
     objectives: 'Objectives will be updated soon.',
     slate: [
-      { role: 'Chair', name: 'Dr. Marta Rossi', photo: 'https://randomuser.me/api/portraits/women/43.jpg' },
-      { role: 'Vice Chair', name: 'Dr. Samuel Lee', photo: 'https://randomuser.me/api/portraits/men/44.jpg' },
-      { role: 'Advisor', name: 'Dr. Aisha Rahman', photo: 'https://randomuser.me/api/portraits/women/45.jpg' }
+      { role: 'Advisor', name: 'Dr. SHAIK IMAM SAHEB', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753676700/Dr_Shaik_Imam_Saheb_Biometric_Council_Advisor_vsmm1b.jpg' },
+      { role: 'Chair', name: 'Harish Gaje', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753676161/Harish_Gaje_Chair_bdfqey.jpg' },
+      { role: 'Vice Chair', name: 'Seela Suraj', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753676161/Seela_Suraj_Vice_Chair_y7b9tz.jpg' },
+      { role: 'Secretary', name: 'Dosapati Charan Veera Venkat', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753676161/Dosapati_Charan_Veera_Venkat_Secretary_pd4rj5.jpg' },
+      { role: 'Treasurer', name: 'Akshay Kumar', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753676161/Akshay_Kumar_Treasurer_oxval9.jpg' },
+      { role: 'Web Master', name: 'B Surya Teja', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753676161/B_Surya_Teja_Web_Master_r6wq3h.jpg' }
     ],
     achievements: [
       { title: 'Biometrics Research Award', year: 2023, description: 'For outstanding research in biometrics.', image: 'https://images.pexels.com/photos/106368/pexels-photo-106368.jpeg' }

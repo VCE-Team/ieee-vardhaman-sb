@@ -175,8 +175,8 @@ export function Header() {
                   <span>{item.name}</span>
                   {item.dropdown && <ChevronDown className="w-4 h-4" />}
                 </button>
-                {item.dropdown && (
-                  <div className={`absolute top-full left-0 mt-1 w-56 bg-white rounded-md shadow-lg border border-gray-200 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out z-50 ${item.name === 'Societies' ? 'max-h-64 overflow-y-auto' : ''}`}>
+                                 {item.dropdown && (
+                   <div className={`absolute top-full left-0 mt-1 w-56 bg-white rounded-md shadow-lg border border-gray-200 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out z-50 ${item.name === 'Societies' || item.name === 'Councils' ? 'max-h-64 overflow-y-auto' : ''}`}>
                     {item.dropdown.map((dropdownItem, dropdownIndex) => (
                       <button
                         key={dropdownIndex}
@@ -324,8 +324,8 @@ export function Header() {
                           />
                         )}
                       </button>
-                      {item.dropdown && openDropdowns[index] && (
-                        <div className={`bg-white border-l-4 border-green-500 ml-6 mr-2 rounded-r-lg shadow-sm ${item.name === 'Societies' ? 'max-h-64 overflow-y-auto' : ''}`}>
+                                             {item.dropdown && openDropdowns[index] && (
+                         <div className={`bg-white border-l-4 border-green-500 ml-6 mr-2 rounded-r-lg shadow-sm ${item.name === 'Societies' || item.name === 'Councils' ? 'max-h-64 overflow-y-auto' : ''}`}>
                           {item.dropdown.map((dropdownItem, dropdownIndex) => (
                             <button
                               key={dropdownIndex}

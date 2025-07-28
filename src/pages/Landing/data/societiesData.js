@@ -356,9 +356,9 @@ export const societiesData = [
     mission: "To promote the development and application of computational intelligence technologies.",
     objectives: 'Objectives will be updated soon.',
     slate: [
-      { role: 'Chair', name: 'Dr. Julia Müller', photo: 'https://randomuser.me/api/portraits/women/37.jpg' },
-      { role: 'Vice Chair', name: 'Dr. Ahmed Hassan', photo: 'https://randomuser.me/api/portraits/men/38.jpg' },
-      { role: 'Advisor', name: 'Dr. Mei Lin', photo: 'https://randomuser.me/api/portraits/women/39.jpg' }
+      { role: 'Chair', name: 'Dr. Laura Kim', photo: 'https://randomuser.me/api/portraits/women/46.jpg' },
+      { role: 'Vice Chair', name: 'Dr. Peter Novak', photo: 'https://randomuser.me/api/portraits/men/47.jpg' },
+      { role: 'Advisor', name: 'Dr. Saanvi Mehta', photo: 'https://randomuser.me/api/portraits/women/48.jpg' }
     ],
     achievements: [
       { title: 'CI Innovation Award', year: 2023, description: 'For innovation in computational intelligence.', image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg' }
@@ -424,9 +424,13 @@ export const societiesData = [
     mission: "To promote the development and application of industrial electronics.",
     objectives: 'Objectives will be updated soon.',
     slate: [
-      { role: 'Chair', name: 'Dr. Grace Lee', photo: 'https://randomuser.me/api/portraits/women/49.jpg' },
-      { role: 'Vice Chair', name: 'Dr. Oscar Martinez', photo: 'https://randomuser.me/api/portraits/men/50.jpg' },
-      { role: 'Advisor', name: 'Dr. Rina Patel', photo: 'https://randomuser.me/api/portraits/women/51.jpg' }
+      { role: 'Advisor', name: 'Dr. Rina Patel', photo: 'https://randomuser.me/api/portraits/women/51.jpg' },
+      { role: 'Chair', name: 'Balshetty Sahithi', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753675488/Sahithi_B_n8opg0.jpg' },
+      { role: 'Vice Chair', name: 'Rikkumalla Manu', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753675489/Manu_cfs6xs.jpg' },
+      { role: 'Secretary', name: 'Arshiya Tabassum', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753675489/Arshiya_hjipmc.jpg' },
+      { role: 'Treasurer', name: 'Santapoor Shourya', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753675489/Shourya_pet5qj.jpg' },
+      { role: 'Web Master', name: 'Burra Manish Goud', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753675488/Manish_plrktm.jpg' },
+      
     ],
     achievements: [
       { title: 'Industrial Innovation Award', year: 2023, description: 'For innovation in industrial electronics.', image: 'https://images.pexels.com/photos/106368/pexels-photo-106368.jpeg' }
