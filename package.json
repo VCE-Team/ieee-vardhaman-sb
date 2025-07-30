@@ -13,7 +13,6 @@
     "@react-three/drei": "^9.102.6",
     "@react-three/fiber": "^8.15.19",
     "embla-carousel-react": "^8.6.0",
-    "firebase": "^11.9.1",
     "framer-motion": "^12.18.1",
     "gsap": "^3.13.0",
     "lucide-react": "^0.344.0",

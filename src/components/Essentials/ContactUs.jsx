@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import { Send, Loader2, AlertCircle } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
-import { collection, addDoc } from 'firebase/firestore';
-import { db } from '../../firebaseConfig';
-
-
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 export const ContactUs = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -31,12 +26,8 @@ export const ContactUs = () => {
     setError('');
   
     try {
-      await addDoc(collection(db, 'contactRequests'), {
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-        timestamp: new Date()
-      });
+      // Simulate form submission (replace with your actual backend endpoint)
+      await new Promise(resolve => setTimeout(resolve, 1000));
   
       toast.success('Message sent successfully!', {
         duration: 3000,
