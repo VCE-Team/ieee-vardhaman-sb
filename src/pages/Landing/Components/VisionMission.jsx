@@ -34,7 +34,7 @@ export const VisionMission = () => {
             <div className="border-l-4 border-green-600 rounded-l-xl pl-4 mb-4"></div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Objectives</h3>
             <p className="text-gray-700 leading-relaxed flex-grow">
-              Objectives will be updated soon.
+              Objectives will be updated soon
             </p>
           </div>
         </div>
