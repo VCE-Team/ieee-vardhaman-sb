@@ -68,9 +68,12 @@ export const councilsData = [
     mission: "To provide a forum for the interdisciplinary and cross-disciplinary activities of IEEE.",
     objectives: 'Objectives will be updated soon.',
     slate: [
-      { role: 'Chair', name: 'Dr. Sarah Chen', photo: 'https://randomuser.me/api/portraits/women/4.jpg' },
-      { role: 'Vice Chair', name: 'Prof. Michael Rodriguez', photo: 'https://randomuser.me/api/portraits/men/5.jpg' },
-      { role: 'Advisor', name: 'Dr. Emily Watson', photo: 'https://randomuser.me/api/portraits/women/6.jpg' }
+      { role: 'Advisor', name: 'Dr. P.Venkateshwer Reddy', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753895004/Dr._P._Venkateshwer_Reddy_FACULTY_ADVISOR_srv9md.webp' },
+      { role: 'Chair', name: 'P.Rishika', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753895004/P._RISHIKA_CHAIR_gn8x6o.jpg' },
+      { role: 'Vice Chair', name: 'P.Yashwanth', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753895004/P._YASHWANTH_VICE-CHAIR_hvq0ew.jpg' },
+      { role: 'Secretary', name: 'G.Vijay Kumar', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753895004/G_VIJAY_SECRETARY_gp8tnk.png' },
+      { role: 'Treasurer', name: 'M.Siddharth reddy', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753895004/M._Siddharth_Reddy_TREASURER_cbjjzf.png' },
+      { role: 'Web master', name: 'D. Pranai', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753895003/D._PRANAI_WEB_MASTER_qbdltr.jpg' }
     ],
     achievements: [
       { title: 'Outstanding Council Award', year: 2023, description: 'Recognized for excellence in systems engineering.', image: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg' },

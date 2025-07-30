@@ -5,11 +5,20 @@ const SBSlate = () => {
     const teamMembers = [
         {
             id: 10,
-            name: "Nikhil",
+            name: "Dr JVR Ravindra",
             position: "Advisor",
-            image: "https://res.cloudinary.com/doyh3fqr5/image/upload/v1752436850/e9c51a0a6819c3b0032b44c46fd199b0_b7xpy6.jpg",
-            email: "advisor@ieee-vardhaman.org",
-            linkedin: "https://linkedin.com/in/emilydavis",
+            image: "https://vardhaman.org/wp-content/uploads/2025/02/jvr_sir-1-200x200.jpg",
+            email: "",
+            linkedin: "",
+            description: "Providing guidance and mentorship to student leaders and initiatives."
+        },
+        {
+            id: 0,
+            name: "Dr. Sangeeta Singh",
+            position: "Deputy Advisor",
+            image: "https://res.cloudinary.com/dmdiia2yv/image/upload/v1753678123/Sangeeta_Singh_APSCON_m632ac.png",
+            email: "",
+            linkedin: "",
             description: "Providing guidance and mentorship to student leaders and initiatives."
         },
         {
@@ -34,7 +43,7 @@ const SBSlate = () => {
             id: 3,
             name: "Rohith",
             position: "Secratary",
-            image: "",
+            image: "https://res.cloudinary.com/dmdiia2yv/image/upload/v1753852666/Chair.pes_wmbfzs.jpg",
             email: "vicechair@ieee-vardhaman.org",
             linkedin: "https://linkedin.com/in/sarahjohnson",
             description: "Supporting leadership and driving technical excellence across all programs."

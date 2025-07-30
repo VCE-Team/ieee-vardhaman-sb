@@ -1,7 +1,7 @@
 export const societiesData = [
   {
-    id: 'hkn-society',
-    name: 'HKN Society',
+    id: 'ieee-hkn-society',
+    name: 'IEEE HKN Society',
     image: 'https://hkn.ieee.org/wp-content/uploads/2017/07/HKN_Logo.jpg', // Placeholder icon
     carouselImages: [
       'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg',
@@ -12,9 +12,12 @@ export const societiesData = [
     mission: '1. To recognize and celebrate academic merit, professional promise, and leadership potential among engineering students and inspire them to contribute to a sustainable and technologically enriched future.<br/>2. To create a collaborative environment for student-led technical exploration, interdisciplinary innovation, and ethical engineering practices through events, mentorship, and outreach.<br/>3. To align chapter initiatives with Vardhaman College of Engineering’s commitment to excellence in education, research, and service by cultivating industry-ready professionals with strong human values.',
     objectives: '1.	To recognize and honor academic excellence, leadership potential, and exemplary character among students in the fields of electrical, electronics, and computer engineering. <br/> 2.	To promote a culture of innovation, research, and ethical engineering practices through technical events, mentorship programs, and interdisciplinary collaboration. <br/> 3.	To engage students in service-oriented engineering solutions that address real-world societal needs, aligning with sustainable development goals and community impact. <br/> 4.	To cultivate global competence, professional development, and lifelong learning by facilitating interactions with industry leaders, alumni, and international HKN chapters.' ,
     slate: [
-      { role: 'Chair', name: 'Dr. Jane Doe', photo: 'https://randomuser.me/api/portraits/women/40.jpg' },
+      { role: 'Advisor', name: 'Dr. Emily Brown', photo: 'https://randomuser.me/api/portraits/women/42.jpg' },
+      { role: 'Chair', name: 'Ms. Thanmai Gadagamma', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753345965/thanmai2_g5za1q.jpg' },
       { role: 'Vice Chair', name: 'Dr. John Smith', photo: 'https://randomuser.me/api/portraits/men/41.jpg' },
-      { role: 'Advisor', name: 'Dr. Emily Brown', photo: 'https://randomuser.me/api/portraits/women/42.jpg' }
+      { role: 'Secretary', name: 'V. Hrushikesh Patel', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753351223/shivani_mtts_s7qav3.jpg' },
+      { role: 'Treasurer', name: 'Keerthi Sane', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753897742/aed481b6-bc1a-4282-8b7b-b20f483aee02.png' },
+      { role: 'Web Master', name: '', photo: '' },
     ],
     achievements: [
       { title: 'Outstanding Chapter Award', year: 2024, description: 'Recognized for outstanding chapter activities.', image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg' }
@@ -185,9 +188,12 @@ export const societiesData = [
     mission: "To promote the development and application of antennas and propagation technologies.",
     objectives: 'Objectives will be updated soon.',
     slate: [
-      { role: 'Chair', name: 'Dr. Olivia White', photo: 'https://randomuser.me/api/portraits/women/25.jpg' },
-      { role: 'Vice Chair', name: 'Dr. Ethan Green', photo: 'https://randomuser.me/api/portraits/men/26.jpg' },
-      { role: 'Advisor', name: 'Dr. Priya Nair', photo: 'https://randomuser.me/api/portraits/women/27.jpg' }
+      { role: 'Advisor', name: 'Dr. V. Harini', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753897692/47865121-24ed-4ff2-babb-f092b055b859.png' },
+      { role: 'Chair', name: 'Mr. Shaik Jani Pasha', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753897727/35359dd9-aca7-477e-b96a-d69015bb69b9.png' },
+      { role: 'Vice Chair', name: 'Mr. Madasu Tharun', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753897734/d0dde728-d813-4c16-bab0-5f0b4250cfff.png' },
+      { role: 'Secretary', name: 'Ms. Sane Keerthi', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753897742/aed481b6-bc1a-4282-8b7b-b20f483aee02.png' },
+      { role: 'Treasurer', name: 'Ms. Ghanapuram Yashaswi', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753897751/41e90663-7f5f-4d93-8268-cf08a65cdd13.png' },
+      { role: 'Web Master', name: 'Mr. D. Adithya', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753897755/31cf20a1-f3b1-4392-a56e-c727a5b3b847.png' }
     ],
     achievements: [
       { title: 'Antenna Design Award', year: 2023, description: 'For innovative antenna design.', image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg' }
@@ -422,6 +428,43 @@ export const societiesData = [
     stats: { members: 150, events: 15, awards: 6 }
   },
   {
+    id: 'ieee-social-implications-of-technology-society',
+    name: 'IEEE Social Implications of Technology Society',
+    image: 'https://ewh.ieee.org/soc/ssit/IEE-14-TA-152_SSIT_Logo_RGB.png',
+    carouselImages: [
+      'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg',
+      'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg'
+    ],
+    description: "To be updated",
+    vision: "To be updated",
+    mission: "To be updated",
+    objectives: 'Objectives will be updated soon.',
+    slate: [
+      { role: 'Advisor', name: 'Ms. Sowmya M', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753896015/My_Pic_njnmpd.jpg' },
+      { role: 'Chair', name: 'Vivin Chandrra Paasam', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753896015/Half_pic_wyx9ex.jpg' },
+      { role: 'Vice Chair', name: 'Sayeeda Farhath Syeda', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753896017/farhath_picture_v8h2wm.jpg' },
+      { role: 'Secretary', name: 'Siddha Topalle', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753896016/Siddha_Sankalp_picture_lc9u80.jpg' },
+      { role: 'Treasurer', name: 'Dhiren Bukka', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753896015/Dhiren_Rao_B_picture_xzrokk.jpg' },
+      { role: 'Web Master', name: 'Aniketh Gandhari', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753896016/IMG_20250728_105958_v1zxmk.jpg' }
+    ],
+    achievements: [
+      { title: 'CI Innovation Award', year: 2023, description: 'For innovation in computational intelligence.', image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg' }
+    ],
+    gallery: [
+      { img: 'https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg', caption: 'CI Symposium' },
+      { img: 'https://images.pexels.com/photos/1000653/pexels-photo-1000653.jpeg', caption: 'Neural Networks Workshop' }
+    ],
+    events: {
+      past: [
+        { title: 'Neural Networks Conference', date: '2023-06-15', description: 'Conference on neural networks.', image: 'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg' }
+      ],
+      upcoming: [
+        { title: 'Fuzzy Systems Bootcamp', date: '2024-09-10', description: 'Bootcamp on fuzzy systems.', image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg' }
+      ]
+    },
+    stats: { members: 150, events: 15, awards: 6 }
+  },
+  {
     id: 'ieee-photonics-society',
     name: 'IEEE Photonics Society',
     image: 'https://ieeephotonics.org/wp-content/uploads/2022/11/photonics-society-alt.jpeg',
@@ -434,9 +477,12 @@ export const societiesData = [
     mission: "To promote the development and application of photonics technologies.",
     objectives: 'Objectives will be updated soon.',
     slate: [
-      { role: 'Chair', name: 'Dr. Laura Kim', photo: 'https://randomuser.me/api/portraits/women/46.jpg' },
-      { role: 'Vice Chair', name: 'Dr. Peter Novak', photo: 'https://randomuser.me/api/portraits/men/47.jpg' },
-      { role: 'Advisor', name: 'Dr. Saanvi Mehta', photo: 'https://randomuser.me/api/portraits/women/48.jpg' }
+      { role: 'Advisor', name: 'Mr. A. Ananda Kumar', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753898600/anand_hdr82v.jpg' },
+      { role: 'Chair', name: 'Medha Meka', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753898600/CHAIR_23881A0232_MEDHA-removebg-preview_tshsjs.jpg' },
+      { role: 'Vice Chair', name: 'Santosh Gandavarapu', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753898599/VICE_CHAIR_23885A0204_SANTOSH-removebg-preview_abx7ex.jpg' },
+      { role: 'Secretary', name: 'Chowdam Shivanandh', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753898600/SECRETARY_23881A0213_SHIVANANDAM-removebg-preview_limx0k.jpg' },
+      { role: 'Treasurer', name: 'Deepika Pathlavath', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753898601/TREASURER_23881A0239_DEEPIKA-removebg-preview_y16jy7.jpg' },
+      { role: 'Web Master', name: 'Akshaya Rallagudem', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753898601/WEB_MASTER_23881A0243_AKSHAYA-removebg-preview_ysn82s.jpg' }
     ],
     achievements: [
       { title: 'Photonics Innovation Award', year: 2022, description: 'For innovation in photonics.', image: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg' }
@@ -567,6 +613,7 @@ export const societiesData = [
     },
     stats: { members: 150, events: 15, awards: 6 }
   },
+  
   {
     id: 'ieee-geoscience-and-remote-sensing-society',
     name: 'IEEE Geoscience and Remote Sensing Society',
@@ -580,8 +627,8 @@ export const societiesData = [
     stats: { members: 100, events: 10, awards: 3 }
   },
   {
-    id: 'ieee-robotics-society',
-    name: 'IEEE Robotics Society',
+    id: 'ieee-robotics-and-automation-society',
+    name: 'IEEE Robotics and Automation Society',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgjPlqAX9WSzWGsmUIZGMYHb80FEguitHbIA&s',
     carouselImages: [
       'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg',
@@ -592,9 +639,12 @@ export const societiesData = [
     mission: "To foster the development and application of robotics and automation technology.",
     objectives: 'Objectives will be updated soon.',
     slate: [
-      { role: 'Chair', name: 'Carlos Martinez', photo: 'https://randomuser.me/api/portraits/men/4.jpg' },
-      { role: 'Vice Chair', name: 'Priya Singh', photo: 'https://randomuser.me/api/portraits/women/5.jpg' },
-      { role: 'Advisor', name: 'Dr. John Smith', photo: 'https://randomuser.me/api/portraits/men/6.jpg' }
+      { role: 'Advisor', name: 'Ms. U. Pranavi', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753894487/U_PRANAVI_FACULTY_ADVISOR_us1kzp.jpg' },
+      { role: 'Chair', name: 'K Manisharan', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753894486/K._MANISHARAN_CHAIR_mx6nvk.jpg' },
+      { role: 'Vice Chair', name: 'M Dinesh', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753894487/M._DINESH_VICE-CHAIR_wqk1jk.jpg' },
+      { role: 'Secretary', name: 'Rudra Deekshith', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753894486/RUDRA_DEEKSHITH_SECRETARY_dgatjv.jpg' },
+      { role: 'Treasurer', name: 'V Chinmayi', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753894487/V._CHINMAYI_TREASURER_flheqm.jpg' },
+      { role: 'Web Master', name: 'M.Praneetha reddy', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753894487/M._PRANEETHA_REDDY_WEB_MASTER_i2eocl.jpg' }
     ],
     achievements: [
       { title: 'Robotics Innovation Award', year: 2023, description: 'Awarded for excellence in robotics research.', image: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg' }

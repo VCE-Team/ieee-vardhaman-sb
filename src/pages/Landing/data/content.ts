@@ -24,7 +24,7 @@ export const slides: Slide[] = [
 // Societies with custom image URLs - you can easily add/change these
 export const societies: Society[] = [
   {
-    name: "HKN Society",
+    name: "IEEE HKN Society",
     image: "https://cdn-icons-png.flaticon.com/512/1995/1995507.png"
   },
   { 
@@ -68,12 +68,8 @@ export const societies: Society[] = [
     image: "https://cdn-icons-png.flaticon.com/512/4712/4712035.png" // AI/Brain icon
   },
   { 
-    name: "IEEE Sensors Council", 
+    name: "IEEE Social Implications of Technology Society", 
     image: "https://cdn-icons-png.flaticon.com/512/3135/3135755.png" // Sensor icon
-  },
-  { 
-    name: "IEEE Biometrics Council", 
-    image: "https://cdn-icons-png.flaticon.com/512/2965/2965380.png" // Biometric icon
   },
   { 
     name: "IEEE Photonics Society", 
@@ -84,7 +80,7 @@ export const societies: Society[] = [
     image: "https://cdn-icons-png.flaticon.com/512/1046/1046857.png" // Industrial icon
   },
   { 
-    name: "IEEE Power & Energy Society", 
+    name: "IEEE Power Energy Society", 
     image: "https://cdn-icons-png.flaticon.com/512/1046/1046857.png" // Power icon
   },
   { 
