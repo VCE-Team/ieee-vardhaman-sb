@@ -34,11 +34,17 @@ jobs:
           ref: main
           path: main
 
-      - name: Copy build to main
-        run: |
-          rm -rf main/*
-          cp -r dist/* main/
-          cp main/CNAME main/ || true
+      - name: Preserve CNAME file
+        run: cp main/CNAME ../CNAME_backup || true
+
+      - name: Clean main folder
+        run: rm -rf main/*
+
+      - name: Copy build files
+        run: cp -r dist/* main/
+
+      - name: Restore CNAME file
+        run: cp ../CNAME_backup main/CNAME || true
 
       - name: Commit and push to main
         run: |
