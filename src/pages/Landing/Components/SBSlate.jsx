@@ -5,7 +5,7 @@ const SBSlate = () => {
     const teamMembers = [
         {
             id: 10,
-            name: "Dr JVR Ravindra",
+            name: "Dr. J V R Ravindra",
             position: "Advisor",
             image: "https://vardhaman.org/wp-content/uploads/2025/02/jvr_sir-1-200x200.jpg",
             email: "",
@@ -32,7 +32,7 @@ const SBSlate = () => {
         },
         {
             id: 2,
-            name: "Thanmai",
+            name: "Thanmai Gadagamma",
             position: "Vice Chair",
             image: "https://res.cloudinary.com/dmdiia2yv/image/upload/v1753345965/thanmai2_g5za1q.jpg",
             email: "vicechair@ieee-vardhaman.org",
