@@ -1,39 +1,48 @@
-name: 🚀 Deploy to GitHub Pages (Preserve CNAME)
+# Full working version
+name: Auto Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - dev
+    branches: [dev]
 
 jobs:
-  deploy:
-    runs-on: windows-latest
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: ⬇️ Checkout dev branch
-        uses: actions/checkout@v3
+      - name: Checkout dev branch
+        uses: actions/checkout@v4
+        with:
+          ref: dev
 
-      - name: 🔧 Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - name: 📦 Install dependencies
-        run: npm install
+      - name: Install dependencies
+        run: npm ci
 
-      - name: 🛠️ Build the React app
+      - name: Build project
         run: npm run build
 
-      - name: ✅ Ensure CNAME exists
-        run: if not exist CNAME exit 1
-
-      - name: 🛡️ Copy CNAME into build
-        run: copy CNAME build\CNAME
-
-      - name: 🚚 Deploy to main branch
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Checkout main branch in separate folder
+        uses: actions/checkout@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          publish_branch: main
-          force_orphan: false
+          ref: main
+          path: main
+
+      - name: Copy build to main
+        run: |
+          rm -rf main/*
+          cp -r build/* main/
+          cp main/CNAME main/ || true
+
+      - name: Commit and push to main
+        run: |
+          cd main
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Auto-deploy from dev 🚀" || echo "No changes to commit"
+          git push origin main --force
