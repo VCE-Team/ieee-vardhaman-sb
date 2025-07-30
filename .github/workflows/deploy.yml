@@ -1,4 +1,3 @@
-# Full working version
 name: Auto Deploy to GitHub Pages
 
 on:
@@ -26,6 +25,9 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: List dist folder contents (debug)
+        run: ls -alh dist/
+
       - name: Checkout main branch in separate folder
         uses: actions/checkout@v4
         with:
@@ -35,7 +37,7 @@ jobs:
       - name: Copy build to main
         run: |
           rm -rf main/*
-          cp -r build/* main/
+          cp -r dist/* main/
           cp main/CNAME main/ || true
 
       - name: Commit and push to main
