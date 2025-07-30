@@ -543,9 +543,12 @@ export const societiesData = [
     mission: "To promote the development and application of power electronics technologies.",
     objectives: 'Objectives will be updated soon.',
     slate: [
-      { role: 'Chair', name: 'Dr. Lucas Silva', photo: 'https://randomuser.me/api/portraits/men/52.jpg' },
-      { role: 'Vice Chair', name: 'Dr. Emily Brown', photo: 'https://randomuser.me/api/portraits/women/53.jpg' },
-      { role: 'Advisor', name: 'Dr. Rajesh Kumar', photo: 'https://randomuser.me/api/portraits/men/54.jpg' }
+      { role: 'Advisor', name: 'Dr Patil Mounica', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753853726/PELS_Branch_Advisor_zmcno4.jpg' },
+      { role: 'Chair', name: 'Ch Sri Harshini', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753853725/Chair_uiiutp.jpg' },
+      { role: 'Vice Chair', name: 'P Pavani', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753853726/Vice_Chair_bimpsp.jpg' },
+      { role: 'Secretary', name: 'Madhusudhan Reddy P', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753853726/Secretary_asdlmr.jpg' },
+      { role: 'Treasurer', name: 'Manoj Kumar Reddy', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753853726/Treasurer_p4pvm0.jpg' },
+      { role: 'Web Master', name: 'M Shreya', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753853727/Web_Master_cm1qek.jpg' }
     ],
     achievements: [
       { title: 'Power Electronics Innovation Award', year: 2022, description: 'For innovation in power electronics.', image: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg' }
@@ -609,5 +612,42 @@ export const societiesData = [
       ]
     },
     stats: { members: 100, events: 10, awards: 3 }
+  },
+  {
+    id: 'ieee-power-energy-society',
+    name: 'IEEE Power & Energy Society',
+    image: 'https://tryengineeringinstitute.ieee.org/wp-content/uploads/2022/06/IEEE-Power-and-Energy-Society.png',
+    carouselImages: [
+      'https://images.pexels.com/photos/905905/pexels-photo-905905.jpeg',
+      'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg'
+    ],
+         description: "The IEEE Power & Energy Society is dedicated to advancing the theory and practice of electrical and electronic engineering in the development, planning, design, construction, operation, and control of equipment, apparatus, systems, and energy resources.",
+     vision: "To foster innovation, research, and professional excellence in power and energy systems while promoting sustainable solutions through student and faculty engagement.",
+     mission: "To inspire and empower students to explore emerging technologies in power and energy systems. <br/> • To create a collaborative learning environment through technical events, industry interaction, and sustainability-driven outreach.<br/> • To bridge the gap between academia and industry by providing practical insights into real-world applications in power generation, transmission, and smart energy solutions.",
+     objectives: "1. Host Technical Events Focused on Power and Energy Innovation <br/> 2. Empower Educators and Learners through FDPs and STTPs <br/> 3. Bridge Academia and Industry through Expert Engagements <br/> 4. Drive Social Impact through Sustainable Energy Initiatives <br/> 5. Promote Research and Global Engagement",
+    slate: [
+      { role: 'Advisor', name: 'Dr. T Anuradha Devi', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753852665/Faculty_Advisor.pes_uubvih.jpg' },
+      { role: 'Chair', name: 'Mandepudi Rohith', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753852666/Chair.pes_wmbfzs.jpg' },
+      { role: 'Vice Chair', name: 'K Shiva Bhargavi', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753852665/Vice_Chair.pes_iam3fr.jpg' },
+      { role: 'Secretary', name: 'Pavani Nellutla', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753852665/secretary.pes_jkaeg0.jpg' },
+      { role: 'Treasurer', name: 'Banoth Snehalatha', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753852665/Treasurer.pes_xjghxh.jpg' },
+      { role: 'Web Master', name: 'K Dinesh Kumar', photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753852665/Webmaster.pes_qkqzfn.jpg' }
+    ],
+    achievements: [
+      { title: 'Power & Energy Excellence Award', year: 2023, description: 'For excellence in power and energy research.', image: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg' }
+    ],
+    gallery: [
+      { img: 'https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg', caption: 'Energy Expo' },
+      { img: 'https://images.pexels.com/photos/1000653/pexels-photo-1000653.jpeg', caption: 'Power Workshop' }
+    ],
+    events: {
+      past: [
+        { title: 'Power & Energy Conference', date: '2023-07-15', description: 'Conference on power and energy systems.', image: 'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg' }
+      ],
+      upcoming: [
+        { title: 'Renewable Energy Summit', date: '2024-12-05', description: 'Summit on renewable energy technologies.', image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg' }
+      ]
+    },
+    stats: { members: 200, events: 20, awards: 8 }
   }
 ]; 
