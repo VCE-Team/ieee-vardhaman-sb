@@ -56,10 +56,7 @@ export function Header() {
       dropdown: [
         { name: 'View Full Gallery', path: '/gallery' },
       ]
-    },
-    { name: 'Contact', path: '/contact' },
-    { name: 'Journey', path: '/journey' },
-    { name: 'Newsletters', path: '/newsletters' }
+    }
   ];
 
   // Determine which nav item should be active based on the current path
@@ -71,9 +68,6 @@ export function Header() {
   else if (pathname === '/past-events' || pathname === '/upcoming-events') activeSection = 'Events';
   else if (pathname.startsWith('/achievements')) activeSection = 'Achievements';
   else if (pathname.startsWith('/gallery')) activeSection = 'Gallery';
-  else if (pathname.startsWith('/newsletters')) activeSection = 'Newsletters';
-  else if (pathname.startsWith('/journey')) activeSection = 'Journey';
-  else if (pathname.startsWith('/contact')) activeSection = 'Contact';
   else if (pathname === '/notifications') {
     notificationsActive = true;
     activeSection = '';

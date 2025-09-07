@@ -29,10 +29,7 @@ function App() {
     { name: 'Societies', id: 'societies' },
     { name: 'Councils', id: 'councils' },
     { name: 'Events', id: 'events' },
-    { name: 'Achievements', id: 'achievements' },
-    { name: 'Gallery', id: 'gallery' },
-    { name: 'FAQs', id: 'faqs' },
-    { name: 'Contact', id: 'contact' },
+    { name: 'Achievements', id: 'achievements' }
   ];
 
   useEffect(() => {
@@ -104,10 +101,7 @@ function App() {
         { name: 'View Full Gallery', action: () => navigate('/gallery') }
       ]
     },
-    { name: 'FAQs', action: () => scrollToSection('faqs') },
-    { name: 'Contact', action: () => scrollToSection('contact') },
-    { name: 'Journey', action: () => navigate('/journey') },
-    { name: 'Newsletters', action: () => navigate('/newsletters') }
+    { name: 'FAQs', action: () => scrollToSection('faqs') }
   ];
 
   return (

@@ -161,27 +161,6 @@ const Login = () => {
             ← Back to IEEE Vardhaman
           </Link>
         </motion.div>
-
-        {/* Demo Credentials */}
-        {process.env.NODE_ENV === 'development' && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="bg-slate-100 rounded-lg p-4"
-          >
-            <h4 className="text-sm font-semibold text-slate-700 mb-2 flex items-center">
-              <AlertCircle className="h-4 w-4 mr-2" />
-              Demo Credentials
-            </h4>
-            <div className="text-xs text-slate-600 space-y-1">
-              <div><strong>HKN Society:</strong> hkn@ieee.vardhaman.edu / hkn123</div>
-              <div><strong>Circuits & Systems:</strong> circuitsandsystems@ieee.vardhaman.edu / circuitsandsystems123</div>
-              <div><strong>CEDA Council:</strong> electronicdesignautomation@ieee.vardhaman.edu / electronicdesignautomation123</div>
-              <div><strong>RFID Council:</strong> rfid@ieee.vardhaman.edu / rfid123</div>
-            </div>
-          </motion.div>
-        )}
       </div>
     </div>
   );
