@@ -26,7 +26,6 @@ export const AuthProvider = ({ children }) => {
           setUser(userProfile);
         }
       } catch (error) {
-        console.error('Auth check failed:', error);
         // Clear invalid token
         localStorage.removeItem('authToken');
         apiService.setToken(null);
@@ -54,7 +53,6 @@ export const AuthProvider = ({ children }) => {
         return { success: false, error: 'Invalid response from server' };
       }
     } catch (error) {
-      console.error('Login failed:', error);
       return { success: false, error: error.message || 'Login failed' };
     } finally {
       setLoading(false);
@@ -65,7 +63,7 @@ export const AuthProvider = ({ children }) => {
     try {
       await apiService.logout();
     } catch (error) {
-      console.error('Logout error:', error);
+      // Handle logout error silently
     } finally {
       setUser(null);
       localStorage.removeItem('authToken');
@@ -75,19 +73,14 @@ export const AuthProvider = ({ children }) => {
   const getDashboardRoute = (user) => {
     if (!user) return '/login';
     
-    console.log('Determining dashboard route for user:', user);
-    
     // Based on user role and entityId, determine the dashboard route
     if (user.role === 'SOCIETY_ADMIN' && user.entityId) {
       const dashboardRoute = `/societies/${user.entityId}/dashboard`;
-      console.log('Society admin dashboard route:', dashboardRoute);
       return dashboardRoute;
     } else if (user.role === 'COUNCIL_ADMIN' && user.entityId) {
       const dashboardRoute = `/councils/${user.entityId}/dashboard`;
-      console.log('Council admin dashboard route:', dashboardRoute);
       return dashboardRoute;
     } else {
-      console.log('User role or entityId not valid for dashboard access:', { role: user.role, entityId: user.entityId });
       return '/unauthorized';
     }
   };

@@ -50,7 +50,6 @@ export const DataProvider = ({ children }) => {
       const societies = await apiService.getAllSocieties();
       return societies;
     } catch (error) {
-      console.error('Error fetching all societies:', error);
       return [];
     }
   }, []);
@@ -64,7 +63,6 @@ export const DataProvider = ({ children }) => {
         try {
           societyData.slate = JSON.parse(societyData.slateMembers);
         } catch (e) {
-          console.warn('Failed to parse slateMembers JSON:', e);
           societyData.slate = [];
         }
       } else {
@@ -76,7 +74,6 @@ export const DataProvider = ({ children }) => {
         try {
           societyData.events = JSON.parse(societyData.events);
         } catch (e) {
-          console.warn('Failed to parse events JSON:', e);
           societyData.events = { upcoming: [], past: [] };
         }
       } else {
@@ -87,13 +84,11 @@ export const DataProvider = ({ children }) => {
       try {
         societyData.achievements = await apiService.getSocietyAchievements(societyId);
       } catch (e) {
-        console.warn('Failed to fetch achievements from API, falling back to JSON parsing:', e);
         // Fallback to parsing JSON if the dedicated endpoint fails
         if (societyData && societyData.achievements) {
           try {
             societyData.achievements = JSON.parse(societyData.achievements);
           } catch (parseError) {
-            console.warn('Failed to parse achievements JSON:', parseError);
             societyData.achievements = [];
           }
         } else {
@@ -103,7 +98,6 @@ export const DataProvider = ({ children }) => {
       
       return societyData;
     } catch (error) {
-      console.error('Error fetching society:', error);
       return null;
     }
   }, []);
@@ -119,7 +113,6 @@ export const DataProvider = ({ children }) => {
       const updatedSociety = await apiService.updateSociety(societyId, updateData);
       return updatedSociety;
     } catch (error) {
-      console.error('Error updating society:', error);
       throw error;
     }
   }, [createCompleteSocietyUpdateData]);
@@ -145,7 +138,6 @@ export const DataProvider = ({ children }) => {
       
       return member;
     } catch (error) {
-      console.error('Error adding society member:', error);
       throw error;
     }
   }, []);
@@ -171,7 +163,6 @@ export const DataProvider = ({ children }) => {
       
       return currentSlateMembers[memberIndex];
     } catch (error) {
-      console.error('Error updating society member:', error);
       throw error;
     }
   }, []);
@@ -197,7 +188,6 @@ export const DataProvider = ({ children }) => {
       await apiService.updateSociety(societyId, updateData);
       
     } catch (error) {
-      console.error('Error deleting society member:', error);
       throw error;
     }
   }, []);
@@ -228,7 +218,6 @@ export const DataProvider = ({ children }) => {
       
       return await apiService.updateSociety(societyId, updateData);
     } catch (error) {
-      console.error('Error adding society event:', error);
       throw error;
     }
   }, [createCompleteSocietyUpdateData]);
@@ -265,7 +254,6 @@ export const DataProvider = ({ children }) => {
       
       return await apiService.updateSociety(societyId, updateData);
     } catch (error) {
-      console.error('Error updating society event:', error);
       throw error;
     }
   }, [createCompleteSocietyUpdateData]);
@@ -288,7 +276,6 @@ export const DataProvider = ({ children }) => {
       
       return await apiService.updateSociety(societyId, updateData);
     } catch (error) {
-      console.error('Error deleting society event:', error);
       throw error;
     }
   }, [createCompleteSocietyUpdateData]);
@@ -311,7 +298,6 @@ export const DataProvider = ({ children }) => {
         return await apiService.updateSociety(societyId, updateData);
       }
     } catch (error) {
-      console.error('Error moving event to past:', error);
       throw error;
     }
   }, [createCompleteSocietyUpdateData]);
@@ -365,7 +351,6 @@ export const DataProvider = ({ children }) => {
       
       return false; // No changes needed
     } catch (error) {
-      console.error('Error auto-categorizing events:', error);
       return false;
     }
   }, [createCompleteSocietyUpdateData]);
@@ -373,25 +358,18 @@ export const DataProvider = ({ children }) => {
   // Society Achievement functions
   const addSocietyAchievement = useCallback(async (societyId, achievement) => {
     try {
-      console.log('Adding achievement for society:', societyId);
-      console.log('Achievement data:', achievement);
-      console.log('Current user:', user);
-      console.log('API Service token exists:', !!apiService.token);
       
       // Use the dedicated createSocietyAchievement API method
       const result = await apiService.createSocietyAchievement(societyId, achievement);
-      console.log('Achievement added successfully:', result);
       
       return result;
     } catch (error) {
-      console.error('Error adding society achievement:', error);
       throw error;
     }
   }, [user]);
 
   const updateSocietyAchievement = useCallback(async (societyId, achievementIndex, updates) => {
     try {
-      console.log('Updating achievement for society:', societyId, 'at index:', achievementIndex);
       
       // Get the current achievements to find the achievement ID
       const achievements = await apiService.getSocietyAchievements(societyId);
@@ -402,21 +380,18 @@ export const DataProvider = ({ children }) => {
         
         // Use the dedicated updateSocietyAchievement API method
         const result = await apiService.updateSocietyAchievement(societyId, achievementId, updates);
-        console.log('Achievement updated successfully:', result);
         
         return result;
       } else {
         throw new Error(`Invalid achievement index: ${achievementIndex}`);
       }
     } catch (error) {
-      console.error('Error updating society achievement:', error);
       throw error;
     }
   }, []);
 
   const deleteSocietyAchievement = useCallback(async (societyId, achievementIndex) => {
     try {
-      console.log('Deleting achievement for society:', societyId, 'at index:', achievementIndex);
       
       // Get the current achievements to find the achievement ID
       const achievements = await apiService.getSocietyAchievements(societyId);
@@ -427,12 +402,10 @@ export const DataProvider = ({ children }) => {
         
         // Use the dedicated deleteSocietyAchievement API method
         await apiService.deleteSocietyAchievement(societyId, achievementId);
-        console.log('Achievement deleted successfully');
       } else {
         throw new Error(`Invalid achievement index: ${achievementIndex}`);
       }
     } catch (error) {
-      console.error('Error deleting society achievement:', error);
       throw error;
     }
   }, []);
@@ -442,7 +415,6 @@ export const DataProvider = ({ children }) => {
     try {
       return await apiService.createSocietyGalleryItem(societyId, item);
     } catch (error) {
-      console.error('Error adding society gallery item:', error);
       throw error;
     }
   }, []);
@@ -451,7 +423,6 @@ export const DataProvider = ({ children }) => {
     try {
       await apiService.deleteSocietyGalleryItem(societyId, itemId);
     } catch (error) {
-      console.error('Error deleting society gallery item:', error);
       throw error;
     }
   }, []);
@@ -462,7 +433,6 @@ export const DataProvider = ({ children }) => {
       const councilData = await apiService.getCouncilDetails(councilId);
       return councilData;
     } catch (error) {
-      console.error('Error fetching council:', error);
       return null;
     }
   }, []);
@@ -472,7 +442,6 @@ export const DataProvider = ({ children }) => {
       const updatedCouncil = await apiService.updateCouncil(councilId, updates);
       return updatedCouncil;
     } catch (error) {
-      console.error('Error updating council:', error);
       throw error;
     }
   }, []);
@@ -483,7 +452,6 @@ export const DataProvider = ({ children }) => {
       const newMember = await apiService.createCouncilMember(councilId, member);
       return newMember;
     } catch (error) {
-      console.error('Error adding council member:', error);
       throw error;
     }
   }, []);
@@ -493,7 +461,6 @@ export const DataProvider = ({ children }) => {
       const updatedMember = await apiService.updateCouncilMember(councilId, memberId, updates);
       return updatedMember;
     } catch (error) {
-      console.error('Error updating council member:', error);
       throw error;
     }
   }, []);
@@ -502,7 +469,6 @@ export const DataProvider = ({ children }) => {
     try {
       await apiService.deleteCouncilMember(councilId, memberId);
     } catch (error) {
-      console.error('Error deleting council member:', error);
       throw error;
     }
   }, []);
@@ -516,7 +482,6 @@ export const DataProvider = ({ children }) => {
         return await apiService.createCouncilUpcomingEvent(councilId, event);
       }
     } catch (error) {
-      console.error('Error adding council event:', error);
       throw error;
     }
   }, []);
@@ -529,7 +494,6 @@ export const DataProvider = ({ children }) => {
         return await apiService.updateCouncilUpcomingEvent(councilId, eventId, updates);
       }
     } catch (error) {
-      console.error('Error updating council event:', error);
       throw error;
     }
   }, []);
@@ -542,7 +506,6 @@ export const DataProvider = ({ children }) => {
         await apiService.deleteCouncilUpcomingEvent(councilId, eventId);
       }
     } catch (error) {
-      console.error('Error deleting council event:', error);
       throw error;
     }
   }, []);
@@ -552,7 +515,6 @@ export const DataProvider = ({ children }) => {
     try {
       return await apiService.createCouncilAchievement(councilId, achievement);
     } catch (error) {
-      console.error('Error adding council achievement:', error);
       throw error;
     }
   }, []);
@@ -561,7 +523,6 @@ export const DataProvider = ({ children }) => {
     try {
       return await apiService.updateCouncilAchievement(councilId, achievementId, updates);
     } catch (error) {
-      console.error('Error updating council achievement:', error);
       throw error;
     }
   }, []);
@@ -570,7 +531,6 @@ export const DataProvider = ({ children }) => {
     try {
       await apiService.deleteCouncilAchievement(councilId, achievementId);
     } catch (error) {
-      console.error('Error deleting council achievement:', error);
       throw error;
     }
   }, []);
@@ -580,7 +540,6 @@ export const DataProvider = ({ children }) => {
     try {
       return await apiService.createCouncilGalleryItem(councilId, item);
     } catch (error) {
-      console.error('Error adding council gallery item:', error);
       throw error;
     }
   }, []);
@@ -589,7 +548,6 @@ export const DataProvider = ({ children }) => {
     try {
       await apiService.deleteCouncilGalleryItem(councilId, itemId);
     } catch (error) {
-      console.error('Error deleting council gallery item:', error);
       throw error;
     }
   }, []);

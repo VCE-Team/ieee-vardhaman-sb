@@ -31,13 +31,10 @@ const CouncilDashboard = () => {
     if (!isInitialized) return;
     
     const loadCouncilData = async () => {
-      console.log('CouncilDashboard - councilId:', councilId);
       try {
         const council = await getCouncil(councilId);
-        console.log('CouncilDashboard - found council:', council);
         setCouncilData(council);
       } catch (error) {
-        console.error('Error loading council data:', error);
         setCouncilData(null);
       }
     };

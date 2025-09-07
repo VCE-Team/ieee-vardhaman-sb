@@ -105,7 +105,6 @@ const Settings = () => {
 
       setSuccessMessage('Profile updated successfully');
     } catch (error) {
-      console.error('Failed to update profile:', error);
       setErrorMessage('Failed to update profile. Please try again.');
     } finally {
       setLoading(false);
@@ -133,7 +132,6 @@ const Settings = () => {
         confirmPassword: ''
       });
     } catch (error) {
-      console.error('Failed to change password:', error);
       if (error.response?.status === 400) {
         setErrorMessage('Current password is incorrect');
       } else {

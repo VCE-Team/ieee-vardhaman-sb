@@ -21,9 +21,7 @@ class ApiService {
     
     if (this.token) {
       headers['Authorization'] = `Bearer ${this.token}`;
-      console.log('API Request Headers:', headers);
     } else {
-      console.warn('No token found for API request');
     }
     
     return headers;
@@ -48,7 +46,6 @@ class ApiService {
           errorMessage = errorData.error || errorMessage;
         } catch (parseError) {
           // If we can't parse the error response, use the default message
-          console.warn('Could not parse error response:', parseError);
         }
         throw new Error(errorMessage);
       }
@@ -59,13 +56,11 @@ class ApiService {
         try {
           const text = await response.text();
           if (!text || text.trim() === '') {
-            console.warn('Empty response body, returning empty object');
             return {};
           }
           const data = JSON.parse(text);
           return data;
         } catch (parseError) {
-          console.error('Error parsing JSON response:', parseError);
           throw new Error('Invalid JSON response from server');
         }
       } else {
@@ -73,7 +68,6 @@ class ApiService {
         return {};
       }
     } catch (error) {
-      console.error('API request failed:', error);
       throw error;
     }
   }

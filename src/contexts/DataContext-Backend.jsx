@@ -26,7 +26,6 @@ export const DataProvider = ({ children }) => {
       const societyData = await apiService.getSocietyDetails(societyId);
       return societyData;
     } catch (error) {
-      console.error('Error fetching society:', error);
       return null;
     }
   }, []);
@@ -36,7 +35,6 @@ export const DataProvider = ({ children }) => {
       const updatedSociety = await apiService.updateSociety(societyId, updates);
       return updatedSociety;
     } catch (error) {
-      console.error('Error updating society:', error);
       throw error;
     }
   }, []);
@@ -47,7 +45,6 @@ export const DataProvider = ({ children }) => {
       const newMember = await apiService.createSocietyMember(societyId, member);
       return newMember;
     } catch (error) {
-      console.error('Error adding society member:', error);
       throw error;
     }
   }, []);
@@ -57,7 +54,6 @@ export const DataProvider = ({ children }) => {
       const updatedMember = await apiService.updateSocietyMember(societyId, memberId, updates);
       return updatedMember;
     } catch (error) {
-      console.error('Error updating society member:', error);
       throw error;
     }
   }, []);
@@ -66,7 +62,6 @@ export const DataProvider = ({ children }) => {
     try {
       await apiService.deleteSocietyMember(societyId, memberId);
     } catch (error) {
-      console.error('Error deleting society member:', error);
       throw error;
     }
   }, []);
@@ -80,7 +75,6 @@ export const DataProvider = ({ children }) => {
         return await apiService.createSocietyUpcomingEvent(societyId, event);
       }
     } catch (error) {
-      console.error('Error adding society event:', error);
       throw error;
     }
   }, []);
@@ -93,7 +87,6 @@ export const DataProvider = ({ children }) => {
         return await apiService.updateSocietyUpcomingEvent(societyId, eventId, updates);
       }
     } catch (error) {
-      console.error('Error updating society event:', error);
       throw error;
     }
   }, []);
@@ -106,7 +99,6 @@ export const DataProvider = ({ children }) => {
         await apiService.deleteSocietyUpcomingEvent(societyId, eventId);
       }
     } catch (error) {
-      console.error('Error deleting society event:', error);
       throw error;
     }
   }, []);
@@ -116,7 +108,6 @@ export const DataProvider = ({ children }) => {
     try {
       return await apiService.createSocietyAchievement(societyId, achievement);
     } catch (error) {
-      console.error('Error adding society achievement:', error);
       throw error;
     }
   }, []);
@@ -125,7 +116,6 @@ export const DataProvider = ({ children }) => {
     try {
       return await apiService.updateSocietyAchievement(societyId, achievementId, updates);
     } catch (error) {
-      console.error('Error updating society achievement:', error);
       throw error;
     }
   }, []);
@@ -134,7 +124,6 @@ export const DataProvider = ({ children }) => {
     try {
       await apiService.deleteSocietyAchievement(societyId, achievementId);
     } catch (error) {
-      console.error('Error deleting society achievement:', error);
       throw error;
     }
   }, []);
@@ -144,7 +133,6 @@ export const DataProvider = ({ children }) => {
     try {
       return await apiService.createSocietyGalleryItem(societyId, item);
     } catch (error) {
-      console.error('Error adding society gallery item:', error);
       throw error;
     }
   }, []);
@@ -153,7 +141,6 @@ export const DataProvider = ({ children }) => {
     try {
       await apiService.deleteSocietyGalleryItem(societyId, itemId);
     } catch (error) {
-      console.error('Error deleting society gallery item:', error);
       throw error;
     }
   }, []);
@@ -164,7 +151,6 @@ export const DataProvider = ({ children }) => {
       const councilData = await apiService.getCouncilDetails(councilId);
       return councilData;
     } catch (error) {
-      console.error('Error fetching council:', error);
       return null;
     }
   }, []);
@@ -174,7 +160,6 @@ export const DataProvider = ({ children }) => {
       const updatedCouncil = await apiService.updateCouncil(councilId, updates);
       return updatedCouncil;
     } catch (error) {
-      console.error('Error updating council:', error);
       throw error;
     }
   }, []);
@@ -185,7 +170,6 @@ export const DataProvider = ({ children }) => {
       const newMember = await apiService.createCouncilMember(councilId, member);
       return newMember;
     } catch (error) {
-      console.error('Error adding council member:', error);
       throw error;
     }
   }, []);
@@ -195,7 +179,6 @@ export const DataProvider = ({ children }) => {
       const updatedMember = await apiService.updateCouncilMember(councilId, memberId, updates);
       return updatedMember;
     } catch (error) {
-      console.error('Error updating council member:', error);
       throw error;
     }
   }, []);
@@ -204,7 +187,6 @@ export const DataProvider = ({ children }) => {
     try {
       await apiService.deleteCouncilMember(councilId, memberId);
     } catch (error) {
-      console.error('Error deleting council member:', error);
       throw error;
     }
   }, []);
@@ -218,7 +200,6 @@ export const DataProvider = ({ children }) => {
         return await apiService.createCouncilUpcomingEvent(councilId, event);
       }
     } catch (error) {
-      console.error('Error adding council event:', error);
       throw error;
     }
   }, []);
@@ -231,7 +212,6 @@ export const DataProvider = ({ children }) => {
         return await apiService.updateCouncilUpcomingEvent(councilId, eventId, updates);
       }
     } catch (error) {
-      console.error('Error updating council event:', error);
       throw error;
     }
   }, []);
@@ -244,7 +224,6 @@ export const DataProvider = ({ children }) => {
         await apiService.deleteCouncilUpcomingEvent(councilId, eventId);
       }
     } catch (error) {
-      console.error('Error deleting council event:', error);
       throw error;
     }
   }, []);
@@ -254,7 +233,6 @@ export const DataProvider = ({ children }) => {
     try {
       return await apiService.createCouncilAchievement(councilId, achievement);
     } catch (error) {
-      console.error('Error adding council achievement:', error);
       throw error;
     }
   }, []);
@@ -263,7 +241,6 @@ export const DataProvider = ({ children }) => {
     try {
       return await apiService.updateCouncilAchievement(councilId, achievementId, updates);
     } catch (error) {
-      console.error('Error updating council achievement:', error);
       throw error;
     }
   }, []);
@@ -272,7 +249,6 @@ export const DataProvider = ({ children }) => {
     try {
       await apiService.deleteCouncilAchievement(councilId, achievementId);
     } catch (error) {
-      console.error('Error deleting council achievement:', error);
       throw error;
     }
   }, []);
@@ -282,7 +258,6 @@ export const DataProvider = ({ children }) => {
     try {
       return await apiService.createCouncilGalleryItem(councilId, item);
     } catch (error) {
-      console.error('Error adding council gallery item:', error);
       throw error;
     }
   }, []);
@@ -291,7 +266,6 @@ export const DataProvider = ({ children }) => {
     try {
       await apiService.deleteCouncilGalleryItem(councilId, itemId);
     } catch (error) {
-      console.error('Error deleting council gallery item:', error);
       throw error;
     }
   }, []);

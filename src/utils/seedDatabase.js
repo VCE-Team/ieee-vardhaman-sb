@@ -212,116 +212,83 @@ async function apiCall(endpoint, method = 'GET', data = null, token = null) {
     
     return result;
   } catch (error) {
-    console.error(`API call failed for ${endpoint}:`, error.message);
     throw error;
   }
 }
 
 // Main seeding function
 async function seedDatabase() {
-  console.log('🌱 Starting database seeding...');
 
   try {
     // Step 1: Create user accounts first
-    console.log('👤 Creating user accounts...');
     const createdUsers = [];
     
     for (const user of sampleUsers) {
       try {
         const result = await apiCall('/auth/register', 'POST', user);
-        console.log(`✅ Created user: ${user.email}`);
         createdUsers.push(result);
       } catch (error) {
-        console.log(`⚠️  User ${user.email} might already exist or there was an error:`, error.message);
       }
     }
 
     // Step 2: Login as HKN society admin to get token
-    console.log('🔐 Logging in as HKN Society admin...');
     const hknLogin = await apiCall('/auth/login', 'POST', {
       email: 'hkn@ieee.vardhaman.edu',
       password: 'hkn123'
     });
     
     const hknToken = hknLogin.token;
-    console.log('✅ Successfully logged in as HKN admin');
 
     // Step 3: Create society data
-    console.log('🏛️ Creating society data...');
     const hknSociety = sampleSocieties[0];
     
     try {
       const societyResult = await apiCall('/society-dashboard/society', 'POST', hknSociety, hknToken);
-      console.log('✅ Created HKN Society data');
     } catch (error) {
-      console.log('⚠️  Society data might already exist:', error.message);
     }
 
     // Step 4: Add members to HKN Society
-    console.log('👥 Adding members to HKN Society...');
     for (const member of sampleMembers) {
       try {
         await apiCall(`/society-dashboard/society/${hknSociety.entityId}/members`, 'POST', member, hknToken);
-        console.log(`✅ Added member: ${member.name}`);
       } catch (error) {
-        console.log(`⚠️  Error adding member ${member.name}:`, error.message);
       }
     }
 
     // Step 5: Add past events
-    console.log('📅 Adding past events...');
     for (const event of samplePastEvents) {
       try {
         await apiCall(`/society-dashboard/society/${hknSociety.entityId}/events/past`, 'POST', event, hknToken);
-        console.log(`✅ Added past event: ${event.title}`);
       } catch (error) {
-        console.log(`⚠️  Error adding past event ${event.title}:`, error.message);
       }
     }
 
     // Step 6: Add upcoming events
-    console.log('📅 Adding upcoming events...');
     for (const event of sampleUpcomingEvents) {
       try {
         await apiCall(`/society-dashboard/society/${hknSociety.entityId}/events/upcoming`, 'POST', event, hknToken);
-        console.log(`✅ Added upcoming event: ${event.title}`);
       } catch (error) {
-        console.log(`⚠️  Error adding upcoming event ${event.title}:`, error.message);
       }
     }
 
     // Step 7: Add achievements
-    console.log('🏆 Adding achievements...');
     for (const achievement of sampleAchievements) {
       try {
         await apiCall(`/society-dashboard/society/${hknSociety.entityId}/achievements`, 'POST', achievement, hknToken);
-        console.log(`✅ Added achievement: ${achievement.title}`);
       } catch (error) {
-        console.log(`⚠️  Error adding achievement ${achievement.title}:`, error.message);
       }
     }
 
     // Step 8: Add gallery items
-    console.log('📸 Adding gallery items...');
     for (const item of sampleGalleryItems) {
       try {
         await apiCall(`/society-dashboard/society/${hknSociety.entityId}/gallery`, 'POST', item, hknToken);
-        console.log(`✅ Added gallery item: ${item.caption}`);
       } catch (error) {
-        console.log(`⚠️  Error adding gallery item ${item.caption}:`, error.message);
       }
     }
 
-    console.log('🎉 Database seeding completed successfully!');
-    console.log('\n📋 Login Credentials:');
-    console.log('HKN Society Admin: hkn@ieee.vardhaman.edu / hkn123');
-    console.log('Circuits Society Admin: circuits@ieee.vardhaman.edu / circuits123');
-    console.log('Student Council Admin: council@ieee.vardhaman.edu / council123');
-    console.log('\n🌐 You can now login and navigate to:');
-    console.log('http://localhost:5173/societies/ieee-hkn-society/dashboard');
 
   } catch (error) {
-    console.error('❌ Error during database seeding:', error);
   }
 }
 
@@ -334,5 +301,4 @@ if (typeof window === 'undefined') {
 } else {
   // Browser environment
   window.seedDatabase = seedDatabase;
-  console.log('Database seeder loaded. Run seedDatabase() to populate your database.');
 }

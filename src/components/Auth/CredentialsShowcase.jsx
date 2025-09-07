@@ -17,7 +17,6 @@ const CredentialsShowcase = () => {
       setCopiedCredential(id);
       setTimeout(() => setCopiedCredential(null), 2000);
     } catch (error) {
-      console.error('Failed to copy:', error);
     }
   };
 

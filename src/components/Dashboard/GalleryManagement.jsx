@@ -54,7 +54,6 @@ const GalleryManagement = () => {
       
       setGalleryItems(data || []);
     } catch (error) {
-      console.error('Failed to load gallery items:', error);
     } finally {
       setLoading(false);
     }
@@ -115,7 +114,6 @@ const GalleryManagement = () => {
       setShowModal(false);
       loadGalleryItems();
     } catch (error) {
-      console.error('Failed to save gallery item:', error);
       alert('Failed to save gallery item. Please try again.');
     } finally {
       setLoading(false);
@@ -138,7 +136,6 @@ const GalleryManagement = () => {
       
       loadGalleryItems();
     } catch (error) {
-      console.error('Failed to delete gallery item:', error);
       alert('Failed to delete gallery item. Please try again.');
     } finally {
       setLoading(false);

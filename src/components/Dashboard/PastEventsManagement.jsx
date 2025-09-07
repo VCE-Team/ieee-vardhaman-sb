@@ -54,7 +54,6 @@ const PastEventsManagement = () => {
       
       setEvents(data || []);
     } catch (error) {
-      console.error('Failed to load events:', error);
     } finally {
       setLoading(false);
     }
@@ -123,7 +122,6 @@ const PastEventsManagement = () => {
       setShowModal(false);
       loadEvents();
     } catch (error) {
-      console.error('Failed to save event:', error);
       alert('Failed to save event. Please try again.');
     } finally {
       setLoading(false);
@@ -146,7 +144,6 @@ const PastEventsManagement = () => {
       
       loadEvents();
     } catch (error) {
-      console.error('Failed to delete event:', error);
       alert('Failed to delete event. Please try again.');
     } finally {
       setLoading(false);

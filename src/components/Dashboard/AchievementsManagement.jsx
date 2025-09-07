@@ -77,7 +77,6 @@ const AchievementsManagement = () => {
       
       setAchievements(data || []);
     } catch (error) {
-      console.error('Failed to load achievements:', error);
     } finally {
       setLoading(false);
     }
@@ -141,7 +140,6 @@ const AchievementsManagement = () => {
       setShowModal(false);
       loadAchievements();
     } catch (error) {
-      console.error('Failed to save achievement:', error);
       alert('Failed to save achievement. Please try again.');
     } finally {
       setLoading(false);
@@ -164,7 +162,6 @@ const AchievementsManagement = () => {
       
       loadAchievements();
     } catch (error) {
-      console.error('Failed to delete achievement:', error);
       alert('Failed to delete achievement. Please try again.');
     } finally {
       setLoading(false);

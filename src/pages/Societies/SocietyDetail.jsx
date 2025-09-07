@@ -18,7 +18,6 @@ export default function SocietyDetail() {
       
       try {
         setLoading(true);
-        console.log('SocietyDetail - Loading society:', societyId);
         
         // Try to get society by ID (numeric)
         let societyData;
@@ -27,9 +26,7 @@ export default function SocietyDetail() {
           societyData = await getSociety(societyId);
         } else {
           // If societyId is a string slug, search all societies to find a match
-          console.log('SocietyDetail - Searching by slug:', societyId);
           const allSocieties = await getAllSocieties();
-          console.log('SocietyDetail - All societies:', allSocieties);
           
           // Convert slug to potential society name matches
           const slugToNameMap = {
@@ -51,15 +48,11 @@ export default function SocietyDetail() {
               name.toLowerCase().includes(s.name.toLowerCase())
             )
           );
-          
-          console.log('SocietyDetail - Found society by slug:', societyData);
         }
         
-        console.log('SocietyDetail - Found society:', societyData);
         setSociety(societyData);
         setError(null);
       } catch (err) {
-        console.error('Error loading society:', err);
         setError('Failed to load society details');
         setSociety(null);
       } finally {

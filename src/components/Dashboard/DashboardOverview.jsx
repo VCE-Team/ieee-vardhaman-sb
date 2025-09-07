@@ -72,7 +72,6 @@ const DashboardOverview = () => {
       setEntityData(data);
       setEditForm(data);
     } catch (error) {
-      console.error('Failed to load data:', error);
     } finally {
       setLoading(false);
     }
@@ -96,7 +95,6 @@ const DashboardOverview = () => {
       setEntityData(updatedData);
       setEditing(false);
     } catch (error) {
-      console.error('Failed to update:', error);
       alert('Failed to update. Please try again.');
     } finally {
       setLoading(false);

@@ -31,16 +31,13 @@ const SocietyDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
 
   const loadSocietyData = async () => {
-    console.log('SocietyDashboard - societyId:', societyId);
     try {
       // First, auto-categorize events based on dates
       await autoCategorizeSocietyEvents(societyId);
       
       const society = await getSociety(societyId);
-      console.log('SocietyDashboard - found society:', society);
       setSocietyData(society);
     } catch (error) {
-      console.error('Error loading society data:', error);
       setSocietyData(null);
     }
   };
@@ -121,7 +118,7 @@ const SocietyDashboard = () => {
                   { id: 'members', label: 'Slate Members', icon: Users },
                   { id: 'gallery', label: 'Gallery', icon: Camera },
                   { id: 'achievements', label: 'Achievements', icon: Trophy },
-                  { id: 'settings', label: 'Settings', icon: Settings }
+                  { id: 'settings', label: 'Basic Info', icon: FileText }
                 ].map((tab) => {
                   const Icon = tab.icon;
                   return (
@@ -311,7 +308,6 @@ const EventsTab = ({ societyData, societyId, onRefresh }) => {
         await onRefresh();
       }
     } catch (error) {
-      console.error('Error saving event:', error);
       // Handle error (show toast/alert)
     }
   };
@@ -325,7 +321,6 @@ const EventsTab = ({ societyData, societyId, onRefresh }) => {
           await onRefresh();
         }
       } catch (error) {
-        console.error('Error deleting event:', error);
         // Handle error (show toast/alert)
       }
     }
@@ -340,7 +335,6 @@ const EventsTab = ({ societyData, societyId, onRefresh }) => {
           await onRefresh();
         }
       } catch (error) {
-        console.error('Error moving event to past:', error);
         // Handle error (show toast/alert)
       }
     }
@@ -527,7 +521,6 @@ const MembersTab = ({ societyData, societyId, onRefresh }) => {
         await onRefresh();
       }
     } catch (error) {
-      console.error('Error saving member:', error);
       // Handle error (show toast/alert)
     }
   };
@@ -541,7 +534,6 @@ const MembersTab = ({ societyData, societyId, onRefresh }) => {
           await onRefresh();
         }
       } catch (error) {
-        console.error('Error deleting member:', error);
         // Handle error (show toast/alert)
       }
     }
@@ -767,7 +759,6 @@ const AchievementsTab = ({ societyData, societyId, onRefresh }) => {
         await onRefresh();
       }
     } catch (error) {
-      console.error('Error saving achievement:', error);
       // Handle error (show toast/alert)
     }
   };
@@ -781,7 +772,6 @@ const AchievementsTab = ({ societyData, societyId, onRefresh }) => {
           await onRefresh();
         }
       } catch (error) {
-        console.error('Error deleting achievement:', error);
         // Handle error (show toast/alert)
       }
     }
@@ -881,7 +871,7 @@ const AchievementsTab = ({ societyData, societyId, onRefresh }) => {
   );
 };
 
-// Settings Tab Component
+// Basic Info Tab Component
 const SettingsTab = ({ societyData, societyId, onRefresh }) => {
   const { updateSocietyInfo } = useData();
   const [formData, setFormData] = useState({
@@ -911,14 +901,14 @@ const SettingsTab = ({ societyData, societyId, onRefresh }) => {
 
     try {
       await updateSocietyInfo(societyId, formData);
-      setSaveMessage('Settings saved successfully!');
+      setSaveMessage('Basic information saved successfully!');
       setTimeout(() => setSaveMessage(''), 3000);
       // Refresh the society data to show updated information
       if (onRefresh) {
         await onRefresh();
       }
     } catch (error) {
-      setSaveMessage('Error saving settings. Please try again.');
+      setSaveMessage('Error saving basic information. Please try again.');
       setTimeout(() => setSaveMessage(''), 3000);
     } finally {
       setIsSaving(false);
@@ -927,7 +917,7 @@ const SettingsTab = ({ societyData, societyId, onRefresh }) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">Society Settings</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-6">Basic Information</h2>
       
       {saveMessage && (
         <div className={`mb-6 p-4 rounded-lg ${

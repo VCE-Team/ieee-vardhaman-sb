@@ -26,7 +26,6 @@ export const DataProvider = ({ children }) => {
         const parsedSocieties = JSON.parse(savedSocieties);
         setSocieties(parsedSocieties);
       } catch (e) {
-        console.error('Error parsing saved societies:', e);
         setSocieties(societiesData);
       }
     } else {
@@ -39,7 +38,6 @@ export const DataProvider = ({ children }) => {
         const parsedCouncils = JSON.parse(savedCouncils);
         setCouncils(parsedCouncils);
       } catch (e) {
-        console.error('Error parsing saved councils:', e);
         setCouncils(councilsData);
       }
     } else {
