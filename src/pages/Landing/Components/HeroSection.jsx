@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '../../../components/UI/ProfessionalComponents';
 
 export const HeroSection = ({ heroImages, onScrollToSection }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -24,13 +25,15 @@ export const HeroSection = ({ heroImages, onScrollToSection }) => {
       </div>
 
       {/* Carousel Controls */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
         {heroImages.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-              currentSlide === index ? 'bg-white' : 'bg-white bg-opacity-50'
+            className={`w-4 h-4 rounded-full transition-all duration-300 hover:transform hover:scale-110 ${
+              currentSlide === index 
+                ? 'bg-white shadow-professional-sm' 
+                : 'bg-white/60 hover:bg-white/80'
             }`}
           />
         ))}
@@ -41,7 +44,7 @@ export const HeroSection = ({ heroImages, onScrollToSection }) => {
         onClick={() =>
           setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length)
         }
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors duration-200"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-white/80 transition-all duration-300 hover:transform hover:-translate-x-1 p-2 rounded-full bg-black/20 hover:bg-black/30 backdrop-blur-sm"
       >
         <ChevronLeft className="w-8 h-8" />
       </button>
@@ -49,7 +52,7 @@ export const HeroSection = ({ heroImages, onScrollToSection }) => {
       {/* Right Arrow */}
       <button
         onClick={() => setCurrentSlide((prev) => (prev + 1) % heroImages.length)}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors duration-200"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-white/80 transition-all duration-300 hover:transform hover:translate-x-1 p-2 rounded-full bg-black/20 hover:bg-black/30 backdrop-blur-sm"
       >
         <ChevronRight className="w-8 h-8" />
       </button>

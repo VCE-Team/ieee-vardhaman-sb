@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
 import { Header } from './Components/Header';
 import { HeroSection } from './Components/HeroSection';
 import { VisionMission } from './Components/VisionMission';
@@ -21,6 +22,7 @@ import { councilsData } from './data/councilsData';
 function App() {
   const [activeSection, setActiveSection] = useState('Home');
   const navigate = useNavigate();
+  
   const sectionIds = [
     { name: 'Home', id: 'hero' },
     { name: 'About', id: 'about' },
@@ -109,7 +111,7 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-professional-surface">
       <Header navigationItems={navigationItems} activeSection={activeSection} />
       <HeroSection heroImages={heroImages} onScrollToSection={scrollToSection} />
       <VisionMission />

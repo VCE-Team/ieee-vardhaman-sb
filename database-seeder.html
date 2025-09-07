@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE Vardhaman Database Seeder</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1e40af;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .info {
+            background: #e0f2fe;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #0288d1;
+        }
+        .warning {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff9800;
+        }
+        button {
+            background: #1e40af;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+        }
+        button:hover {
+            background: #1e3a8a;
+        }
+        button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        #output {
+            background: #000;
+            color: #0f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            height: 300px;
+            overflow-y: scroll;
+            white-space: pre-wrap;
+            margin-top: 20px;
+        }
+        .credentials {
+            background: #f0f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #0369a1;
+        }
+        .cred-item {
+            margin: 10px 0;
+            font-family: monospace;
+            background: #e0f2fe;
+            padding: 8px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌱 IEEE Vardhaman Database Seeder</h1>
+        
+        <div class="info">
+            <h3>📋 What this will do:</h3>
+            <ul>
+                <li>Create sample user accounts for societies and councils</li>
+                <li>Add sample society data (IEEE HKN Society, Circuits Society)</li>
+                <li>Add sample council data (IEEE Student Council)</li>
+                <li>Populate with members, events, achievements, and gallery items</li>
+            </ul>
+        </div>
+        
+        <div class="warning">
+            <h3>⚠️ Important:</h3>
+            <p>Make sure your backend server is running on <strong>http://localhost:8081</strong> before proceeding.</p>
+        </div>
+        
+        <button id="seedBtn" onclick="runSeeding()">🚀 Seed Database with Sample Data</button>
+        <button id="testBtn" onclick="testConnection()" style="background: #059669;">🔗 Test Backend Connection</button>
+        <button id="authTestBtn" onclick="testAuthentication()" style="background: #7c3aed;">🔐 Test Authentication</button>
+        <button id="clearBtn" onclick="clearDatabase()" style="background: #dc2626;">🗑️ Clear Database (Reset)</button>
+        
+        <div id="output" style="display: none;"></div>
+        
+        <div class="credentials">
+            <h3>🔑 Login Credentials (after seeding):</h3>
+            <div class="cred-item"><strong>HKN Society:</strong> hkn@ieee.vardhaman.edu / hkn123</div>
+            <div class="cred-item"><strong>Circuits Society:</strong> circuits@ieee.vardhaman.edu / circuits123</div>
+            <div class="cred-item"><strong>Student Council:</strong> council@ieee.vardhaman.edu / council123</div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:8081/api';
+        
+        // Sample data (same as in the seeder script)
+        const sampleSocieties = [
+            {
+                name: 'IEEE HKN Society',
+                image: 'https://hkn.ieee.org/wp-content/uploads/2017/07/HKN_Logo.jpg',
+                description: 'The HKN Society is dedicated to recognizing excellence in the IEEE fields of interest.',
+                vision: 'To be a pioneering IEEE-HKN chapter that exemplifies leadership in engineering education by promoting academic excellence, ethical conduct, and purposeful innovation.',
+                mission: 'To recognize and celebrate academic merit, professional promise, and leadership potential among engineering students.',
+                objectives: 'To recognize and honor academic excellence, leadership potential, and exemplary character among students.',
+                isActive: true,
+                memberCount: 75,
+                establishedYear: 2020
+            },
+            {
+                name: 'IEEE Circuits and Systems Society',
+                image: 'https://cdn-icons-png.flaticon.com/512/2721/2721297.png',
+                description: 'Focuses on circuits and systems engineering.',
+                vision: 'To advance the theory and application of circuits and systems.',
+                mission: 'To promote excellence in circuits and systems research and education.',
+                objectives: 'To foster innovation in circuits and systems technologies.',
+                isActive: true,
+                memberCount: 60,
+                establishedYear: 2019
+            },
+            {
+                name: 'IEEE Microwave Theory and Techniques Society',
+                image: 'https://cdn-icons-png.flaticon.com/512/3062/3062589.png',
+                description: 'Focused on microwave theory, techniques, and applications in wireless communications and radar systems.',
+                vision: 'To advance microwave theory and techniques for the benefit of humanity.',
+                mission: 'To promote the advancement of microwave theory, design, and application.',
+                objectives: 'To foster research and development in microwave engineering and RF technologies.',
+                isActive: true,
+                memberCount: 45,
+                establishedYear: 2020
+            },
+            {
+                name: 'IEEE Systems, Man, and Cybernetics Society',
+                image: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+                description: 'Dedicated to the advancement of systems engineering, human-machine systems, and cybernetics.',
+                vision: 'To advance systems science and cybernetics for societal benefit.',
+                mission: 'To promote research in systems engineering and human-machine interaction.',
+                objectives: 'To foster innovation in systems science and cybernetic applications.',
+                isActive: true,
+                memberCount: 55,
+                establishedYear: 2018
+            },
+            {
+                name: 'IEEE Information Theory Society',
+                image: 'https://cdn-icons-png.flaticon.com/512/2966/2966226.png',
+                description: 'Focused on information theory, coding, and data compression technologies.',
+                vision: 'To advance information theory for communication and data processing systems.',
+                mission: 'To promote research in information theory and coding techniques.',
+                objectives: 'To foster innovation in information processing and communication theory.',
+                isActive: true,
+                memberCount: 40,
+                establishedYear: 2019
+            },
+            {
+                name: 'IEEE Computational Intelligence Society',
+                image: 'https://cdn-icons-png.flaticon.com/512/3135/3135689.png',
+                description: 'Dedicated to computational intelligence including neural networks, fuzzy systems, and evolutionary computation.',
+                vision: 'To advance computational intelligence for solving complex problems.',
+                mission: 'To promote research in artificial intelligence and machine learning.',
+                objectives: 'To foster innovation in AI, neural networks, and intelligent systems.',
+                isActive: true,
+                memberCount: 65,
+                establishedYear: 2020
+            },
+            {
+                name: 'IEEE Society on Social Implications of Technology',
+                image: 'https://cdn-icons-png.flaticon.com/512/3003/3003035.png',
+                description: 'Focused on the social, ethical, and environmental implications of technology.',
+                vision: 'To advance understanding of technology\'s impact on society.',
+                mission: 'To promote responsible technology development and deployment.',
+                objectives: 'To foster discussion on ethical technology use and social responsibility.',
+                isActive: true,
+                memberCount: 35,
+                establishedYear: 2021
+            },
+            {
+                name: 'IEEE Power & Energy Society',
+                image: 'https://cdn-icons-png.flaticon.com/512/2064/2064635.png',
+                description: 'Dedicated to the advancement of the theory and practice of electrical power and energy systems.',
+                vision: 'To be the leading provider of scientific and educational excellence in electric power and energy.',
+                mission: 'To foster excellence in electric power and energy engineering.',
+                objectives: 'To advance the theory and practice of electrical power engineering.',
+                isActive: true,
+                memberCount: 85,
+                establishedYear: 2018
+            },
+            {
+                name: 'IEEE Power Electronics Society',
+                image: 'https://cdn-icons-png.flaticon.com/512/2942/2942813.png',
+                description: 'Focused on power electronics, including converters, inverters, and power management systems.',
+                vision: 'To advance power electronics technology for efficient energy conversion.',
+                mission: 'To promote research and development in power electronics.',
+                objectives: 'To foster innovation in power conversion and energy efficiency.',
+                isActive: true,
+                memberCount: 70,
+                establishedYear: 2019
+            },
+            {
+                name: 'IEEE Geoscience and Remote Sensing Society',
+                image: 'https://cdn-icons-png.flaticon.com/512/2917/2917995.png',
+                description: 'Dedicated to geoscience and remote sensing technologies for Earth observation and monitoring.',
+                vision: 'To advance geoscience and remote sensing for Earth system understanding.',
+                mission: 'To promote research in Earth observation and environmental monitoring.',
+                objectives: 'To foster innovation in satellite technology and environmental sensing.',
+                isActive: true,
+                memberCount: 50,
+                establishedYear: 2020
+            }
+        ];
+
+        const sampleCouncils = [
+            {
+                name: 'IEEE Student Council',
+                image: 'https://cdn-icons-png.flaticon.com/512/4712/4712035.png',
+                description: 'The main student council coordinating IEEE activities.',
+                vision: 'To lead and coordinate IEEE student activities.',
+                mission: 'To promote IEEE membership and activities among students.',
+                objectives: 'To organize events and foster student engagement.',
+                isActive: true,
+                memberCount: 100,
+                establishedYear: 2018
+            }
+        ];
+
+        const sampleUsers = [
+            {
+                email: 'hkn@ieee.vardhaman.edu',
+                password: 'hkn123',
+                fullName: 'IEEE HKN Society Admin',
+                role: 'SOCIETY_ADMIN',
+                entityId: 1,
+                isActive: true,
+                emailVerified: true
+            },
+            {
+                email: 'circuits@ieee.vardhaman.edu',
+                password: 'circuits123',
+                fullName: 'IEEE Circuits Society Admin',
+                role: 'SOCIETY_ADMIN',
+                entityId: 2,
+                isActive: true,
+                emailVerified: true
+            },
+            {
+                email: 'council@ieee.vardhaman.edu',
+                password: 'council123',
+                fullName: 'IEEE Student Council Admin',
+                role: 'COUNCIL_ADMIN',
+                entityId: 1,
+                isActive: true,
+                emailVerified: true
+            }
+        ];
+
+        const sampleMembers = [
+            {
+                name: 'Ms. Thanmai Gadagamma',
+                role: 'Chair',
+                email: 'thanmai.g@ieee.vardhaman.edu',
+                photo: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1753345965/thanmai2_g5za1q.jpg',
+                bio: 'Passionate about promoting academic excellence in engineering education.'
+            },
+            {
+                name: 'Dr. Emily Brown',
+                role: 'Advisor',
+                email: 'emily.brown@ieee.vardhaman.edu',
+                photo: 'https://randomuser.me/api/portraits/women/42.jpg',
+                bio: 'Faculty advisor with expertise in electrical engineering and student mentorship.'
+            }
+        ];
+
+        function log(message) {
+            const output = document.getElementById('output');
+            output.style.display = 'block';
+            output.textContent += message + '\n';
+            output.scrollTop = output.scrollHeight;
+        }
+
+        function clearLog() {
+            const output = document.getElementById('output');
+            output.textContent = '';
+        }
+
+        async function apiCall(endpoint, method = 'GET', data = null, token = null) {
+            const config = {
+                method,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            };
+
+            if (token) {
+                config.headers['Authorization'] = `Bearer ${token}`;
+                log(`🔑 Using token for ${method} ${endpoint}: ${token.substring(0, 20)}...`);
+            }
+
+            if (data && (method === 'POST' || method === 'PUT')) {
+                config.body = JSON.stringify(data);
+                log(`📤 Sending ${method} data to ${endpoint}: ${JSON.stringify(data, null, 2)}`);
+            }
+
+            log(`🌐 Making API call: ${method} ${API_BASE_URL}${endpoint}`);
+            
+            const response = await fetch(`${API_BASE_URL}${endpoint}`, config);
+            
+            log(`📥 Response status: ${response.status} ${response.statusText}`);
+            
+            let result;
+            try {
+                result = await response.json();
+                log(`📄 Response body: ${JSON.stringify(result, null, 2)}`);
+            } catch (e) {
+                log(`⚠️ Could not parse response as JSON: ${e.message}`);
+                result = { error: 'Invalid JSON response' };
+            }
+            
+            if (!response.ok) {
+                throw new Error(result.error || result.message || `HTTP error! status: ${response.status}`);
+            }
+            
+            return result;
+        }
+
+        async function testConnection() {
+            clearLog();
+            log('🔗 Testing backend connection...');
+            
+            try {
+                // Try a simple endpoint
+                const response = await fetch(`${API_BASE_URL}/health`);
+                if (response.ok) {
+                    log('✅ Backend connection successful!');
+                } else {
+                    log('⚠️ Backend responded but might have issues');
+                }
+            } catch (error) {
+                log('❌ Backend connection failed: ' + error.message);
+                log('Make sure your Spring Boot server is running on http://localhost:8081');
+            }
+        }
+
+        async function runSeeding() {
+            const seedBtn = document.getElementById('seedBtn');
+            seedBtn.disabled = true;
+            seedBtn.textContent = '⏳ Seeding in progress...';
+            
+            clearLog();
+            log('🌱 Starting database seeding...');
+
+            try {
+                // Step 1: Create societies FIRST (without authentication - public endpoint)
+                log('🏛️ Creating societies...');
+                let societyIds = [];
+                for (let i = 0; i < sampleSocieties.length; i++) {
+                    const society = sampleSocieties[i];
+                    try {
+                        const createdSociety = await apiCall('/societies', 'POST', society);
+                        societyIds.push(createdSociety.id);
+                        log(`✅ Created society: ${society.name} (ID: ${createdSociety.id})`);
+                    } catch (error) {
+                        log(`⚠️ Society ${society.name} might already exist: ${error.message}`);
+                        // Try to find existing society ID
+                        try {
+                            const existingSocieties = await apiCall('/societies');
+                            const existing = existingSocieties.find(s => s.name === society.name);
+                            if (existing) {
+                                societyIds.push(existing.id);
+                                log(`📍 Found existing society: ${society.name} (ID: ${existing.id})`);
+                            }
+                        } catch (e) {
+                            log(`❌ Could not find existing society: ${e.message}`);
+                        }
+                    }
+                }
+
+                // Step 2: Create councils FIRST (without authentication - public endpoint)
+                log('🏛️ Creating councils...');
+                let councilIds = [];
+                for (let i = 0; i < sampleCouncils.length; i++) {
+                    const council = sampleCouncils[i];
+                    try {
+                        const createdCouncil = await apiCall('/councils', 'POST', council);
+                        councilIds.push(createdCouncil.id);
+                        log(`✅ Created council: ${council.name} (ID: ${createdCouncil.id})`);
+                    } catch (error) {
+                        log(`⚠️ Council ${council.name} might already exist: ${error.message}`);
+                        // Try to find existing council ID
+                        try {
+                            const existingCouncils = await apiCall('/councils');
+                            const existing = existingCouncils.find(c => c.name === council.name);
+                            if (existing) {
+                                councilIds.push(existing.id);
+                                log(`📍 Found existing council: ${council.name} (ID: ${existing.id})`);
+                            }
+                        } catch (e) {
+                            log(`❌ Could not find existing council: ${e.message}`);
+                        }
+                    }
+                }
+
+                // Step 3: Create user accounts with correct entityId
+                log('👤 Creating user accounts...');
+                const updatedUsers = [
+                    {
+                        ...sampleUsers[0],
+                        entityId: societyIds[0] || 1 // HKN Society ID
+                    },
+                    {
+                        ...sampleUsers[1], 
+                        entityId: societyIds[1] || 2 // Circuits Society ID
+                    },
+                    {
+                        ...sampleUsers[2],
+                        entityId: councilIds[0] || 1 // Student Council ID
+                    }
+                ];
+
+                for (const user of updatedUsers) {
+                    try {
+                        await apiCall('/auth/register', 'POST', user);
+                        log(`✅ Created user: ${user.email} (entityId: ${user.entityId})`);
+                    } catch (error) {
+                        log(`⚠️ User ${user.email} might already exist: ${error.message}`);
+                    }
+                }
+
+                // Step 4: Login and test dashboard access
+                log('🔐 Testing dashboard access...');
+                const loginResult = await apiCall('/auth/login', 'POST', {
+                    email: 'hkn@ieee.vardhaman.edu',
+                    password: 'hkn123'
+                });
+                
+                const hknToken = loginResult.token;
+                log('✅ Successfully logged in as HKN admin');
+
+                // Verify the token works by getting user profile
+                const userProfile = await apiCall('/auth/profile', 'GET', null, hknToken);
+                log(`✅ User authenticated: ${userProfile.fullName} (entityId: ${userProfile.entityId})`);
+
+                // Test dashboard access
+                const hknSocietyId = societyIds[0] || userProfile.entityId;
+                log(`🧪 Testing dashboard access for society ID: ${hknSocietyId}`);
+                try {
+                    const societyDetails = await apiCall(`/society-dashboard/society/${hknSocietyId}`, 'GET', null, hknToken);
+                    log('✅ Dashboard access successful!');
+                } catch (error) {
+                    log(`⚠️ Dashboard access failed: ${error.message}`);
+                }
+
+                // Step 5: Add sample members if dashboard access works
+                log('👥 Adding sample members...');
+                log('⚠️ Member management endpoints not implemented in backend yet');
+                log('📝 Skipping member creation - you can add them through the dashboard UI');
+                /*
+                for (const member of sampleMembers) {
+                    try {
+                        await apiCall(`/society-dashboard/society/${hknSocietyId}/members`, 'POST', member, hknToken);
+                        log(`✅ Added member: ${member.name}`);
+                    } catch (error) {
+                        log(`⚠️ Error adding member: ${error.message}`);
+                    }
+                }
+                */
+
+                log('🎉 Database seeding completed successfully!');
+                log('\n📋 You can now login with:');
+                log(`HKN Society: hkn@ieee.vardhaman.edu / hkn123 (entityId: ${societyIds[0] || 1})`);
+                log(`Circuits Society: circuits@ieee.vardhaman.edu / circuits123 (entityId: ${societyIds[1] || 2})`);
+                log(`Student Council: council@ieee.vardhaman.edu / council123 (entityId: ${councilIds[0] || 1})`);
+                log('\n🌐 Navigate to: http://localhost:5173/login');
+
+            } catch (error) {
+                log('❌ Error during seeding: ' + error.message);
+                log('📝 Full error details: ' + JSON.stringify(error));
+            } finally {
+                seedBtn.disabled = false;
+                seedBtn.textContent = '🚀 Seed Database with Sample Data';
+            }
+        }
+
+        async function testAuthentication() {
+            clearLog();
+            log('🔐 Testing authentication flow...');
+            
+            try {
+                // First, try to create a test user
+                log('👤 Creating test user...');
+                const testUser = {
+                    email: 'test@ieee.vardhaman.edu',
+                    password: 'test123',
+                    fullName: 'Test User',
+                    role: 'SOCIETY_ADMIN',
+                    entityId: 1,
+                    isActive: true,
+                    emailVerified: true
+                };
+                
+                try {
+                    await apiCall('/auth/register', 'POST', testUser);
+                    log('✅ Test user created successfully');
+                } catch (error) {
+                    log('⚠️ Test user might already exist: ' + error.message);
+                }
+                
+                // Try to login with the test user
+                log('🔑 Testing login...');
+                const loginResult = await apiCall('/auth/login', 'POST', {
+                    email: 'test@ieee.vardhaman.edu',
+                    password: 'test123'
+                });
+                
+                log('✅ Login successful! Token received.');
+                
+                // Test token by making an authenticated request
+                log('🛡️ Testing authenticated request...');
+                try {
+                    const userProfile = await apiCall('/auth/profile', 'GET', null, loginResult.token);
+                    log('✅ Authenticated request successful!');
+                    log(`👤 User profile: ${JSON.stringify(userProfile, null, 2)}`);
+                } catch (error) {
+                    log('❌ Authenticated request failed: ' + error.message);
+                }
+                
+            } catch (error) {
+                log('❌ Authentication test failed: ' + error.message);
+            }
+        }
+
+        async function clearDatabase() {
+            const clearBtn = document.getElementById('clearBtn');
+            
+            if (!confirm('⚠️ Are you sure you want to clear ALL database data? This cannot be undone!')) {
+                return;
+            }
+            
+            clearBtn.disabled = true;
+            clearBtn.textContent = '⏳ Clearing database...';
+            
+            clearLog();
+            log('🗑️ Clearing database...');
+
+            try {
+                // You would need to implement these endpoints in your backend
+                log('⚠️ Database clearing requires backend endpoints like /api/admin/clear-all');
+                log('💡 Alternative: Restart your backend server if using H2 in-memory database');
+                log('💡 Or manually delete records from your database tables');
+                
+            } catch (error) {
+                log('❌ Error clearing database: ' + error.message);
+            } finally {
+                clearBtn.disabled = false;
+                clearBtn.textContent = '🗑️ Clear Database (Reset)';
+            }
+        }
+    </script>
+</body>
+</html>

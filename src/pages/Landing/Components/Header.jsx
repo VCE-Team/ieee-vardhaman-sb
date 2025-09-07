@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Bell, Menu, X, ChevronRight } from 'lucide-react';
 import { notifications } from '../data/notifications';
+import LoginOnlyButton from '../../../components/Auth/LoginOnlyButton';
 
 export function Header({ navigationItems, activeSection }) {
   const [notificationsOpen, setNotificationsOpen] = useState(false);
@@ -121,6 +122,11 @@ export function Header({ navigationItems, activeSection }) {
               </div>
             ))}
           </nav>
+
+          {/* Auth Button - Desktop */}
+          <div className="hidden xl:flex">
+            <LoginOnlyButton />
+          </div>
 
           {/* Notifications */}
           <div className="relative notifications-container">
@@ -272,7 +278,12 @@ export function Header({ navigationItems, activeSection }) {
               </div>
               
               {/* Menu Footer */}
-              <div className="px-6 py-4 bg-white border-t border-gray-200">
+              <div className="px-6 py-4 bg-white border-t border-gray-200 space-y-3">
+                {/* Auth Button - Mobile */}
+                <div className="w-full">
+                  <LoginOnlyButton className="w-full justify-center" />
+                </div>
+                
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);

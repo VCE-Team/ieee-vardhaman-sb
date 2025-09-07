@@ -1,7 +1,48 @@
+/* Import Professional Design System */
+@import './styles/professional.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Professional Color System */
+@layer utilities {
+  /* Primary Colors */
+  .text-professional-primary { @apply text-slate-900; }
+  .text-professional-secondary { @apply text-slate-600; }
+  .text-professional-muted { @apply text-slate-400; }
+  .text-professional-blue { @apply text-blue-600; }
+  .text-professional-error { @apply text-red-500; }
+  .text-professional-success { @apply text-green-500; }
+  .text-professional-warning { @apply text-yellow-500; }
+  
+  /* Background Colors */
+  .bg-professional-surface { @apply bg-slate-50; }
+  .bg-professional-blue { @apply bg-blue-600; }
+  .bg-professional-blue\/5 { background-color: rgb(37 99 235 / 0.05); }
+  .bg-professional-blue\/10 { background-color: rgb(37 99 235 / 0.1); }
+  .bg-professional-gradient { @apply bg-gradient-to-br from-slate-50 via-white to-blue-50; }
+  .bg-professional-gradient-primary { @apply bg-gradient-to-br from-blue-600 to-blue-700; }
+  
+  /* Border Colors */
+  .border-professional-border { @apply border-slate-300; }
+  .border-professional-blue { @apply border-blue-600; }
+  .border-professional-blue\/20 { border-color: rgb(37 99 235 / 0.2); }
+  
+  /* Ring Colors */
+  .ring-professional-blue\/20 { --tw-ring-color: rgb(37 99 235 / 0.2); }
+  
+  /* Shadow Utilities */
+  .shadow-professional-sm { @apply shadow-sm; }
+  .shadow-professional-lg { @apply shadow-lg; }
+  .shadow-professional-xl { @apply shadow-xl; }
+  
+  /* Font Weights */
+  .font-professional-bold { @apply font-bold; }
+  .font-professional-semibold { @apply font-semibold; }
+}
+
+/* Existing Animations */
 @keyframes marquee {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-100%); }
@@ -31,5 +72,203 @@
 
 .animate-spin {
   animation: spin 1s linear infinite;
+}
+
+/* Professional Enhancements */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Professional Component Overrides */
+  .card-professional {
+    @apply bg-white rounded-xl shadow-md border border-slate-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .btn-professional-primary {
+    @apply bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-700 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:shadow-md;
+  }
+  
+  .btn-professional-secondary {
+    @apply bg-transparent text-blue-600 border-2 border-blue-600 px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-600 hover:text-white hover:-translate-y-0.5 hover:shadow-lg;
+  }
+  
+  .text-professional-primary {
+    @apply text-slate-900 font-medium;
+  }
+  
+  .text-professional-secondary {
+    @apply text-slate-600;
+  }
+  
+  .text-professional-muted {
+    @apply text-slate-500;
+  }
+  
+  .bg-professional-gradient {
+    @apply bg-gradient-to-br from-blue-50 via-white to-slate-50;
+  }
+  
+  .section-professional {
+    @apply py-16 lg:py-24;
+  }
+  
+  .container-professional {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .heading-professional {
+    @apply text-3xl lg:text-4xl font-bold text-slate-900 mb-4;
+  }
+  
+  .subheading-professional {
+    @apply text-lg text-slate-600 max-w-2xl mx-auto;
+  }
+}
+
+/* Professional Form Styles */
+.form-professional {
+  @apply space-y-6;
+}
+
+.form-professional .form-group {
+  @apply space-y-2;
+}
+
+.form-professional .form-label {
+  @apply block text-sm font-semibold text-slate-900;
+}
+
+.form-professional .form-input {
+  @apply w-full px-4 py-3 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-500 
+         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+         transition-colors duration-200;
+}
+
+.form-professional .form-textarea {
+  @apply resize-none min-h-[100px];
+}
+
+.form-professional .form-select {
+  @apply appearance-none bg-white;
+}
+
+/* Professional Navigation */
+.nav-professional {
+  @apply flex items-center space-x-1;
+}
+
+.nav-professional .nav-link {
+  @apply px-4 py-2 rounded-lg text-slate-600 hover:text-blue-600 hover:bg-blue-50 
+         transition-all duration-200 font-medium;
+}
+
+.nav-professional .nav-link.active {
+  @apply text-blue-600 bg-blue-50 font-semibold;
+}
+
+/* Professional Table Styles */
+.table-professional {
+  @apply w-full border-collapse;
+}
+
+.table-professional th {
+  @apply px-6 py-4 text-left text-xs font-semibold text-slate-900 uppercase tracking-wider 
+         bg-slate-50 border-b border-slate-200;
+}
+
+.table-professional td {
+  @apply px-6 py-4 text-sm text-slate-900 border-b border-slate-200;
+}
+
+.table-professional tbody tr:hover {
+  @apply bg-slate-50;
+}
+
+/* Professional Modal/Dialog */
+.modal-professional {
+  @apply fixed inset-0 z-50 overflow-y-auto;
+}
+
+.modal-professional .modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 transition-opacity;
+}
+
+.modal-professional .modal-content {
+  @apply relative bg-white rounded-xl shadow-xl max-w-md w-full mx-4 p-6;
+}
+
+/* Professional Loading States */
+.loading-professional {
+  @apply animate-pulse;
+}
+
+.skeleton-professional {
+  @apply bg-slate-200 rounded;
+}
+
+/* Professional Alert/Notification Styles */
+.alert-professional {
+  @apply p-4 rounded-lg border-l-4;
+}
+
+.alert-professional.success {
+  @apply bg-green-50 border-green-500 text-green-800;
+}
+
+.alert-professional.warning {
+  @apply bg-yellow-50 border-yellow-500 text-yellow-800;
+}
+
+.alert-professional.error {
+  @apply bg-red-50 border-red-500 text-red-800;
+}
+
+.alert-professional.info {
+  @apply bg-blue-50 border-blue-500 text-blue-800;
+}
+
+/* Professional Badge Styles */
+.badge-professional {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+}
+
+.badge-professional.primary {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.badge-professional.success {
+  @apply bg-green-100 text-green-800;
+}
+
+.badge-professional.warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.badge-professional.error {
+  @apply bg-red-100 text-red-800;
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 640px) {
+  .container-professional {
+    @apply px-4;
+  }
+  
+  .section-professional {
+    @apply py-12;
+  }
+  
+  .heading-professional {
+    @apply text-2xl;
+  }
 }
 

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Calendar, Users, ChevronLeft, ChevronRight, Award, Camera } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
 import Masonry from './reactcom/Masonry';
 import { Stats } from '../pages/Landing/Components/Stats';
 
@@ -90,6 +92,8 @@ function EventCard({ event, isUpcoming = false }) {
 }
 
 export default function DetailLayout({ data = {} }) {
+  const { isAuthenticated, user } = useAuth();
+  
   // Mock data for demonstration
   const mockData = {
     name: "Environmental Club",
@@ -156,7 +160,24 @@ export default function DetailLayout({ data = {} }) {
             <div className="text-center text-white px-4">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">{combinedData.name}</h1>
               {combinedData.description && (
-                <p className="text-lg md:text-xl max-w-xl mx-auto">{combinedData.description}</p>
+                <p className="text-lg md:text-xl max-w-xl mx-auto mb-6">{combinedData.description}</p>
+              )}
+              
+              {/* Admin Dashboard Button */}
+              {isAuthenticated && user && 
+               ((user.type === 'society' && user.id === combinedData.id) ||
+                (user.type === 'council' && user.id === combinedData.id)) && (
+                <div className="mt-6">
+                  <Link
+                    to={user.type === 'society' 
+                      ? `/societies/${user.id}/dashboard` 
+                      : `/councils/${user.id}/dashboard`
+                    }
+                    className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 shadow-lg"
+                  >
+                    Admin Dashboard
+                  </Link>
+                </div>
               )}
             </div>
           </div>
